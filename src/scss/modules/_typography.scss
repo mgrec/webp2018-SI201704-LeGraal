@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'Montserrat Light';
+  src: url('../../assets/font/montserrat-light/montserrat-light.eot');
+  src: url('../../assets/font/montserrat-light/montserrat-light.eot?#iefix') format('embedded-opentype'),
+       url('../../assets/font/montserrat-light/montserrat-light.ttf') format('truetype'),
+       url('../../assets/font/montserrat-light/montserrat-light.svg#font-name') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+$montserrat-light: 'Montserrat Light';
+
+@font-face {
+  font-family: 'Montserrat Regular';
+  src: url('../../assets/font/montserrat-regular/montserrat-regular.eot');
+  src: url('../../assets/font/montserrat-regular/montserrat-regular.eot?#iefix') format('embedded-opentype'),
+  url('../../assets/font/montserrat-regular/montserrat-regular.ttf') format('truetype'),
+  url('../../assets/font/montserrat-regular/montserrat-regular.svg#font-name') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+$montserrat-regular: 'Montserrat Regular';
+
+@font-face {
+  font-family: 'Avenir Next Bold';
+  src: url('../../assets/font/avenir-next-bold/avenir-next-bold.eot');
+  src: url('../../assets/font/avenir-next-bold/avenir-next-bold.eot?#iefix') format('embedded-opentype'),
+  url('../../assets/font/avenir-next-bold/avenir-next-bold.ttf') format('truetype'),
+  url('../../assets/font/avenir-next-bold/avenir-next-bold.svg#font-name') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+$avenir-next-bold: 'Avenir Next Bold';

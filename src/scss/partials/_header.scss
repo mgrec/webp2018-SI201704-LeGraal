@@ -1,0 +1,39 @@
+.header {
+  width: 100vw;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  position: fixed;
+  z-index: 50;
+  background-color: $white;
+  .logo {
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    img {
+    }
+  }
+  nav {
+    display: inline-block;
+    vertical-align: top;
+    ul{
+      display: inline-block;
+      li{
+        display: inline-block;
+        margin-right: 50px;
+        &:first-of-type {
+          margin-left: 50px;
+        }
+        &:last-of-type {
+          margin-right: 0;
+        }
+        a {
+          color: $black;
+          text-decoration: none;
+          font-family: $montserrat-light;
+        }
+      }
+    }
+  }
+}
+

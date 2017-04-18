@@ -1,0 +1,50 @@
+.main {
+  section {
+    width: 100vw;
+    height: 100vh;
+    padding-top: 60px;
+    position: relative;
+    .title {
+      text-align: center;
+    }
+    &#home{
+      background-color: lightgrey;
+
+      .home__block {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        transform: translateY(-50%);
+        text-align: center;
+        .title {
+           font-family: $avenir-next-bold;
+           color: $black;
+           font-size: 100px;
+         }
+        .subtitle {
+          font-family: $montserrat-light;
+          color: $black;
+          font-size: 48px;
+        }
+      }
+
+    }
+    &#whoarewe{
+      background-color: lightblue;
+    }
+    &#expertise{
+      background-color: lightcoral;
+    }
+    &#keynumber{
+      background-color: lightgoldenrodyellow;
+    }
+    &#partners{
+      background-color: lightgreen;
+    }
+    &#contact{
+      background-color: lightcyan;
+    }
+  }
+}
