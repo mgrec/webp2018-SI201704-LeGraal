@@ -7,9 +7,18 @@
  */
 
 // Create and configure Slim app
-$config = ['settings' => [
-    'addContentLengthHeader' => false,
+$config = [
+    'settings' => [
+        'addContentLengthHeader' => false,
+
+        'db' => [
+            'host' => 'localhost',
+            'user' => 'root',
+            'pass' => 'root',
+            'dbname' => 'leGraal'
+        ]
 ]];
+
 $app = new \Slim\App($config);
 
 global $app;
