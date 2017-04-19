@@ -12,4 +12,21 @@ namespace Controller;
 class adminController
 {
 
+    public function isAdminConnect(){
+        session_start();
+        if (isset($_SESSION['user']) && $_SESSION['user'] != null){
+
+        }else{
+            session_unset();
+            session_destroy();
+        }
+    }
+
+    public function logInAdmin(){
+
+    }
+
+    public function logOutAdmin(){
+
+    }
 }
