@@ -106,7 +106,7 @@ $app->group('/admin/', function () {
 
         if ($isConnect == true) {
             $bindVar['connected'] = true;
-            return $this->view->render($response, 'admin/page/contenu.twig', $bindVar);
+            return $this->view->render($response, 'admin/page/settings.twig', $bindVar);
         } else {
             return $response->withRedirect('connexion', 301);
         }
@@ -116,12 +116,18 @@ $app->group('/admin/', function () {
         $bindVar = [];
         $adminController = new adminController();
         $pdo = $this->db;
-
+        
         $isConnect = $adminController->isAdminConnect();
+
+        if (isset($_POST['email'])){
+            $array = $_POST;
+            $userAdd = $adminController->addUser($array, $pdo);
+            $bindVar['code'] = $userAdd['code'];
+        }
 
         if ($isConnect == true) {
             $bindVar['connected'] = true;
-            return $this->view->render($response, 'admin/page/contenu.twig', $bindVar);
+            return $this->view->render($response, 'admin/page/users.twig', $bindVar);
         } else {
             return $response->withRedirect('connexion', 301);
         }

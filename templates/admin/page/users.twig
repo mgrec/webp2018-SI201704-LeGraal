@@ -2,7 +2,68 @@
 
 <body>
 
+<div class="container">
+    <h2>Créer un utilisateur</h2>
+    <p>Vous pouvez créer un utilisateurs à l'aide du formulaire ci-dessous :</p>
+
+    <form method="post" action="">
+        <div class="form-group">
+            <label for="email">Adresse email :</label>
+            <input name="email" type="email" class="form-control" id="email">
+        </div>
+        <div class="form-group">
+            <label for="pwd">Téléphone :</label>
+            <input name="telephone" type="tel" class="form-control" id="pwd">
+        </div>
+        <div class="form-group">
+            <label for="pwd">Nom :</label>
+            <input name="name" type="text" class="form-control" id="pwd">
+        </div>
+        <div class="form-group">
+            <label for="pwd">Prénom :</label>
+            <input name="lastname" type="text" class="form-control" id="pwd">
+        </div>
+        <div class="form-group">
+            <label style="color: red" for="pwd">Le mot de passe est généré aléatoirement et envoyé par email à
+                l'utilisateur.</label>
+            <input type="hidden" class="form-control" id="pwd">
+        </div>
+        <button type="submit" class="btn btn-default">Enregistrer</button>
+    </form>
+    {% if code is defined %}
+
+        {% if code == false %}
+            <p style="color: red">Ce client à déjà été enregistré</p>
+        {% else %}
+            <p style="color: green">Le client à été enregistré avec succès. Un email contenant sont mot de passe lui a
+                été envoyé.</p>
+        {% endif %}
+    {% endif %}
+
+    <hr>
+
+    <h2>Liste des utilisateurs</h2>
+    <p></p>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Email</th>
+            <th>Gérer</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td>john@example.com</td>
+            <td><a href="">Détails</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 
 </body>
 
-{% include 'admin/block/footer.twig'
+{% include 'admin/block/footer.twig' %}

@@ -14,3 +14,36 @@
 .content-form button{
     width: 100%;
 }
+
+.col-item{
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid;
+    background: #F8F8F8;
+    border-color: #e7e7e7;
+    height: 300px;
+    cursor: pointer;
+}
+
+.col-item img{
+    margin: 0 auto;
+    width: 20%;
+    display: block;
+    padding-top: 40px;
+}
+
+.col-item h2{
+    text-align: center;
+    display: block;
+    margin: 20px auto;
+    max-width: 75%;
+    font-size: 18px;
+}
+
+.col-item:hover{
+    background: #eeeeee;
+}
+
+.content{
+    margin: 50px auto;
+}
