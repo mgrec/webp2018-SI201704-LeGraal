@@ -1,24 +1,50 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: maxime
- * Date: 16/12/2016
- * Time: 13:44
- */
+// Create app
+$config = array(
+    'displayErrorDetails' => true,
+    'addContentLengthHeader' => false,
+    'debug' => true,
+    'log.enable' => true,
+    'db' => array(
+        'engine' => 'mysql',
+        'host' => 'localhost',
+        'database' => 'slim',
+        'username' => 'root',
+        'password' => 'root',
+        'charset' => 'utf8',
+        'collation' => 'utf8_unicode_ci',
+        'port' => 8080,
+        'options' => array(
+            PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+            PDO::ATTR_EMULATE_PREPARES   => true,
+        ),
+    )
+);
 
-// Create and configure Slim app
-$config = [
-    'settings' => [
-        'addContentLengthHeader' => false,
+$app = new \Slim\App(['settings' => $config]);
 
-        'db' => [
-            'host' => 'localhost',
-            'user' => 'root',
-            'pass' => 'root',
-            'dbname' => 'leGraal'
-        ]
-]];
+// Get container
+$container = $app->getContainer();
 
-$app = new \Slim\App($config);
+// Register component on container
+$container['view'] = function ($container) {
+    $view = new \Slim\Views\Twig('templates', [
+        'cache' => false
+    ]);
 
-global $app;
+    // Instantiate and add Slim specific extension
+    $basePath = rtrim(str_ireplace('index.php', '', $container['request']->getUri()->getBasePath()), '/');
+    $view->addExtension(new Slim\Views\TwigExtension($container['router'], $basePath));
+
+    return $view;
+};
+
+$container['db'] = function($container) {
+    $config = $container->get('settings')['db'];
+    $dsn = "{$config['engine']}:host={$config['host']};dbname={$config['database']};port={$config['port']};charset={$config['charset']}";
+    $username = $config['username'];
+    $password = $config['password'];
+
+    return new PDO($dsn, $username, $password, $config['options']);
+};

@@ -8,25 +8,75 @@
 require 'vendor/autoload.php';
 require_once "config.php";
 use Controller\indexController;
+use Controller\adminController;
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
 $app->get('/', function ($request, $response, $args) {
-    echo 'Hello ';
-});
+    $bindVar = [];
+
+    return $this->view->render($response, 'home.twig', $bindVar);
+})->setName('profile');
 
 
-$app->get('/{name}', function ($request, $response, $args) {
+$app->post('/contact', function (Request $request) {
+
     $indexController = new indexController();
-    $indexController->render($args['name']);
-});
 
-$app->post('/contact/', function(Request $request){
-    $indexController = new indexController();
     $req = $request->getParams();
     $msgReq = $req['nbrMessage'];
     $corps = $req['corps'];
     $indexController->ContactTratement($msgReq, $corps);
+});
+
+//groupe routes : admin
+$app->group('/admin/', function () {
+    
+    //home admin
+    $this->get('home', function ($request, $response, $arg) {
+        $bindVar = [];
+        $adminController = new adminController();
+
+        $isConnect = $adminController->isAdminConnect();
+
+        if ($isConnect == true) {
+            $bindVar['connected'] = true;
+            return $this->view->render($response, 'admin/page/home.twig', $bindVar);
+        } else {
+            return $response->withRedirect('connexion', 301);
+        }
+    })->setName('adminHome');
+
+    //connexion admin
+    $this->map(['GET', 'POST'], 'connexion', function ($request, $response, $arg) {
+        $bindVar = [];
+        $adminController = new adminController();
+
+        $isConnect = $adminController->isAdminConnect();
+
+        if ($isConnect == true) {
+            return $response->withRedirect('home', 200);
+        }
+
+        if (isset($_POST['email']) && isset($_POST['password'])){
+           $array = $_POST;
+           $connected = $adminController->logInAdmin($array);
+        }
+
+        if (isset($connected) && $connected == true){
+            return $response->withRedirect('home', 200);
+        }
+
+        return $this->view->render($response, 'admin/page/connexion.twig', $bindVar);
+    })->setName('adminConnexion');
+
+    $this->map(['GET', 'POST'], 'deconnexion', function ($request, $response, $arg) {
+        $adminController = new adminController();
+        $adminController->logOutAdmin();
+
+        return $response->withRedirect('connexion', 200);
+    });
+
 });
 
 $app->run();

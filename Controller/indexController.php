@@ -19,7 +19,7 @@ class indexController
         if ($msgReq < 3){
 
         }else{
-            
+
         }
     }
 
@@ -28,7 +28,8 @@ class indexController
         if (isset($_SESSION['user']) && $_SESSION['user'] != null){
 
         }else{
-
+            session_unset();
+            session_destroy();
         }
     }
 

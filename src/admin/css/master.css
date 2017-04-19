@@ -1,0 +1,16 @@
+.content-form{
+    width: 40%;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    padding: 40px;
+    border-radius: 5px;
+    border: 1px solid;
+    background: #F8F8F8;
+    border-color: #e7e7e7;
+}
+
+.content-form button{
+    width: 100%;
+}
