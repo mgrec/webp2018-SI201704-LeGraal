@@ -8,6 +8,7 @@
 
 namespace Controller;
 
+use Model\adminRepository;
 
 class adminController
 {
@@ -22,8 +23,9 @@ class adminController
         }
     }
 
-    public function logInAdmin(){
-
+    public function logInAdmin($pdo){
+        $repo = new adminRepository();
+        return $repo->getAction($pdo);
     }
 
     public function logOutAdmin(){

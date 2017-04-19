@@ -31,20 +31,19 @@ $app->post('/contact/', function(Request $request){
 });
 
 
-$app->get('/admin', function($request, $response, $arg) {
+$app->get('/adminRepository', function($request, $response, $arg) {
     $bindVar = [];
 
-    return $this->view->render($response, 'admin/page/connexion.twig',  $bindVar);
+    return $this->view->render($response, 'adminRepository/page/connexion.twig',  $bindVar);
 })->setName('adminConnection');
 
 $app->get('/connect', function(Request $request, $response, $args) {
-    $dbhandler = $this->db;
-    $queryUsers = $dbhandler->prepare("SELECT * FROM user");
-    $queryUsers->execute();
-    $users = $queryUsers->fetchAll();
-    var_dump($users);
-    die();
+    $adminController = new adminController();
+    $pdo = $this->db;
 
+    $content = $adminController->logInAdmin($pdo);
+
+    var_dump($content);
 });
 
 $app->run();
