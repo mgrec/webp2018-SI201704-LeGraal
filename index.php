@@ -21,15 +21,20 @@ $app->get('/', function ($request, $response, $args) {
 
 
 $app->post('/contact/', function(Request $request){
+    
     $indexController = new indexController();
+    
     $req = $request->getParams();
     $msgReq = $req['nbrMessage'];
     $corps = $req['corps'];
     $indexController->ContactTratement($msgReq, $corps);
 });
 
+
 $app->get('/admin', function($request, $response, $arg) {
-    return $this->view->render($response, 'admin/connection.twig');
+    $bindVar = [];
+
+    return $this->view->render($response, 'admin/page/connexion.twig',  $bindVar);
 })->setName('adminConnection');
 
 $app->get('/connect', function(Request $request, $response, $args) {
