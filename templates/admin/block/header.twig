@@ -30,6 +30,8 @@
                 <ul class="nav navbar-nav navbar-right">
                     {% if connected == true %}
                     <li><a href="/admin/deconnexion"><span class="label label-danger">Deconnexion</span></a></li>
+                    {%  else %}
+                    <li><a href=""><span class="label label-warning">Vous n'êtes pas connecté</span></a></li>
                     {%  endif %}
                 </ul>
             </div><!--/.nav-collapse -->
