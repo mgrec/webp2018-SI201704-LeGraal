@@ -11,15 +11,13 @@ use Controller\indexController;
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
+
 $app->get('/', function ($request, $response, $args) {
-    echo 'Hello ';
-});
+    $bindVar = [];
 
+    return $this->view->render($response, 'home.twig', $bindVar);
+})->setName('profile');
 
-$app->get('/{name}', function ($request, $response, $args) {
-    $indexController = new indexController();
-    $indexController->render($args['name']);
-});
 
 $app->post('/contact/', function(Request $request){
     $indexController = new indexController();
