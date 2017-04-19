@@ -41,7 +41,7 @@ gulp.task('css', function () {
 gulp.task('image', function () {
     gulp.src('src/assets/img/**/*')
         .pipe(image())
-        .pipe(gulp.dest('app/assets/img'));
+        .pipe(gulp.dest('app/assets/img/'));
 });
 
 gulp.task('js',function(){
