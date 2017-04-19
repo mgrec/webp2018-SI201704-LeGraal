@@ -144,4 +144,11 @@ $app->post('/contact', function(Request $request) {
     $contactController->contactTreatment($pdo, $data);
 });
 
+$app->group('/contact/', function() {
+
+    $this->map(['GET', 'POST'], 'connexion', function($request, $response, $arg) {
+
+    });
+});
+
 $app->run();
