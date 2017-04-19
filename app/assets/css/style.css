@@ -665,7 +665,7 @@ textarea {
         background-color: #000000;
         width: 80%;
         height: 225px;
-        margin: 145px auto 0 auto;
+        margin: 145px auto 145px auto;
         position: relative; }
         .main section#keynumber .block-numbers .numbers {
           text-align: center;
@@ -694,6 +694,15 @@ textarea {
               font-family: "Avenir Next Bold";
               font-size: 18px;
               color: #FFFFFF; }
+      .main section#keynumber .lines {
+        width: 40%;
+        height: 220px;
+        background: url("../img/desktop/lines-blue.svg") no-repeat center center;
+        display: inline-block;
+        position: absolute;
+        left: 20px;
+        top: 440px;
+        z-index: 0; }
       .main section#keynumber .block-description {
         padding-top: 200px;
         position: relative; }
@@ -701,7 +710,8 @@ textarea {
           padding-top: 155px;
           width: 50%;
           display: inline-block;
-          vertical-align: top; }
+          vertical-align: top;
+          position: relative; }
           .main section#keynumber .block-description .block-left .description {
             display: block;
             font-family: "Montserrat Regular";
@@ -713,17 +723,17 @@ textarea {
           width: 40%;
           height: 440px;
           background-color: grey;
-          position: relative;
-          right: 0; }
-      .main section#keynumber .lines {
-        width: 40%;
-        height: 220px;
-        background: url("../img/desktop/lines-blue.svg") no-repeat center center;
+          float: right; }
+      .main section#keynumber .lines-grey {
+        width: 70%;
+        height: 170px;
+        background: url("../img/desktop/lines-grey.png") no-repeat center center;
+        background-size: cover;
         display: inline-block;
         position: absolute;
-        left: 20px;
-        top: 440px;
-        z-index: 0; }
+        z-index: -1;
+        top: 200px;
+        left: 180px; }
     .main section#expertise {
       background-color: lightcoral; }
     .main section#partners {
