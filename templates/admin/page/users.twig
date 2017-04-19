@@ -55,10 +55,12 @@
         </thead>
         <tbody>
         <tr>
-            <td>John</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
+            {% for user in users_list %}
+            <td>{{ user.name }}</td>
+            <td>{{ user.lastname }}</td>
+            <td>{{ user.email }}</td>
             <td><a href="">Détails</a></td>
+            {% endfor %}
         </tr>
         </tbody>
     </table>

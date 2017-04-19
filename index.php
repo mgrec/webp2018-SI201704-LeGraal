@@ -116,7 +116,9 @@ $app->group('/admin/', function () {
         $bindVar = [];
         $adminController = new adminController();
         $pdo = $this->db;
-        
+
+        $users = $adminController->getAllUsers($pdo);
+        $bindVar['users_list'] = $users;
         $isConnect = $adminController->isAdminConnect();
 
         if (isset($_POST['email'])){

@@ -80,7 +80,9 @@ class adminController
     }
 
     public function getAllUsers($pdo){
-
+        $repo = new adminRepository();
+        $users = $repo->getAllUsersAction($pdo);
+        return $users;
     }
 
 }
