@@ -9,6 +9,7 @@ require 'vendor/autoload.php';
 require_once "config.php";
 use Controller\indexController;
 use Controller\adminController;
+use Controller\contactController;
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
@@ -133,6 +134,14 @@ $app->group('/admin/', function () {
         }
     });
 
+});
+
+$app->post('/contact', function(Request $request) {
+    $pdo = $this->db;
+    $contactController = new contactController();
+    $data = $request->getParams();
+
+    $contactController->contactTreatment($pdo, $data);
 });
 
 $app->run();
