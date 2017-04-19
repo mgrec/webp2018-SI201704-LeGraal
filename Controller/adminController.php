@@ -7,7 +7,7 @@
  */
 
 namespace Controller;
-
+use Model\adminRepository;
 
 class adminController
 {
@@ -27,10 +27,10 @@ class adminController
         return$connect;
     }
 
-    public function logInAdmin(array $array){
-        session_start();
-        $_SESSION['user_admin'] = $array['email'];
-        return true;
+
+    public function logInAdmin($pdo){
+        $repo = new adminRepository();
+        return $repo->getAction($pdo);
     }
 
     public function logOutAdmin(){
@@ -40,6 +40,5 @@ class adminController
         session_destroy();
         return true;
     }
-
 
 }

@@ -31,7 +31,7 @@ $app->post('/contact', function (Request $request) {
 
 //groupe routes : admin
 $app->group('/admin/', function () {
-
+    
     //home admin
     $this->get('home', function ($request, $response, $arg) {
         $bindVar = [];
