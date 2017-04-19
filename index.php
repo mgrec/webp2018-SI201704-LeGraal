@@ -27,4 +27,8 @@ $app->post('/contact/', function(Request $request){
     $indexController->ContactTratement($msgReq, $corps);
 });
 
+$app->get('/admin', function($request, $response, $arg) {
+    return $this->view->render($response, 'admin/connection.twig');
+})->setName('adminConnection');
+
 $app->run();
