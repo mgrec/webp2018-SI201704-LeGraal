@@ -28,9 +28,22 @@ class adminController
     }
 
 
-    public function logInAdmin($pdo){
+    public function logInAdmin($array, $pdo){
         $repo = new adminRepository();
-        return $repo->getAction($pdo);
+        $connected =  $repo->connectionAction($array, $pdo);
+        
+        if ($connected['code'] == true ){
+            session_start();
+            $_SESSION['user_admin'] = $connected['email'];
+            $_SESSION['user_id'] = $connected['id'];
+
+            return true;
+        }else{
+            session_unset();
+            session_destroy();
+
+            return false;
+        }
     }
 
     public function logOutAdmin(){

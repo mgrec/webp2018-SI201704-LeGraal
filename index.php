@@ -31,11 +31,15 @@ $app->post('/contact', function (Request $request) {
 
 //groupe routes : admin
 $app->group('/admin/', function () {
-    
     //home admin
     $this->get('home', function ($request, $response, $arg) {
+        session_start();
         $bindVar = [];
         $adminController = new adminController();
+
+        if (isset($_SESSION['user_admin'])){
+            $bindVar['user_admin'] = $_SESSION['user_admin'];
+        }
 
         $isConnect = $adminController->isAdminConnect();
 
@@ -51,6 +55,7 @@ $app->group('/admin/', function () {
     $this->map(['GET', 'POST'], 'connexion', function ($request, $response, $arg) {
         $bindVar = [];
         $adminController = new adminController();
+        $pdo = $this->db;
 
         $isConnect = $adminController->isAdminConnect();
 
@@ -60,7 +65,7 @@ $app->group('/admin/', function () {
 
         if (isset($_POST['email']) && isset($_POST['password'])){
            $array = $_POST;
-           $connected = $adminController->logInAdmin($array);
+           $connected = $adminController->logInAdmin($array, $pdo);
         }
 
         if (isset($connected) && $connected == true){
@@ -75,6 +80,51 @@ $app->group('/admin/', function () {
         $adminController->logOutAdmin();
 
         return $response->withRedirect('connexion', 200);
+    });
+
+    $this->map(['GET', 'POST'], 'contenu', function ($request, $response, $arg) {
+        $bindVar = [];
+        $adminController = new adminController();
+        $pdo = $this->db;
+
+        $isConnect = $adminController->isAdminConnect();
+
+        if ($isConnect == true) {
+            $bindVar['connected'] = true;
+            return $this->view->render($response, 'admin/page/contenu.twig', $bindVar);
+        } else {
+            return $response->withRedirect('connexion', 301);
+        }
+    });
+
+    $this->map(['GET', 'POST'], 'settings', function ($request, $response, $arg) {
+        $bindVar = [];
+        $adminController = new adminController();
+        $pdo = $this->db;
+
+        $isConnect = $adminController->isAdminConnect();
+
+        if ($isConnect == true) {
+            $bindVar['connected'] = true;
+            return $this->view->render($response, 'admin/page/contenu.twig', $bindVar);
+        } else {
+            return $response->withRedirect('connexion', 301);
+        }
+    });
+
+    $this->map(['GET', 'POST'], 'users', function ($request, $response, $arg) {
+        $bindVar = [];
+        $adminController = new adminController();
+        $pdo = $this->db;
+
+        $isConnect = $adminController->isAdminConnect();
+
+        if ($isConnect == true) {
+            $bindVar['connected'] = true;
+            return $this->view->render($response, 'admin/page/contenu.twig', $bindVar);
+        } else {
+            return $response->withRedirect('connexion', 301);
+        }
     });
 
 });
