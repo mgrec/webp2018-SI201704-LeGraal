@@ -22,6 +22,12 @@ $(function () {
 	  return false;
 	});
 
+	$('.st-burger-icon').on('click', function() {
+	  $('.st-burger-icon-container').toggleClass('transformed');
+	  $(this).toggleClass('st-burger-icon--transformed');
+	  $('.header').toggleClass('mobile');
+	});
+
 	$(window).scroll(function() {
 		var scrollPos = $(document).scrollTop();
 		if (scrollPos < 700) {
@@ -39,6 +45,18 @@ $(function () {
 			})
 		}
 	})
+
+	$(document).ready(function(){
+		if (window.innerWidth < 894) {
+			$('.slick-block__content').slick({
+				centerMode: true,
+				dots: true,
+				infinite: true,
+				arrows: true
+			});
+		}
+	});
+
 });
 
 })(jQuery, window, document);

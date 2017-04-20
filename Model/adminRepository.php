@@ -102,4 +102,28 @@ class adminRepository
 
         return $res;
     }
+
+    public function uploadFactureAction($data, $name, $pdo)
+    {
+        $query = "INSERT INTO `facture`( `id_user`, `path`, `chantier_name`)
+                  VALUES ( :id, :path, :chantier)";
+        $stmt = $pdo->prepare($query);
+        $stmt->bindValue(':id', intval($data['id']));
+        $stmt->bindValue(':path', $name);
+        $stmt->bindValue(':chantier', $data['chantier']);
+        $stmt->execute();
+        return true;
+    }
+
+    public function uploadPlanAction($data, $name, $pdo)
+    {
+        $query = "INSERT INTO `plan`( `id_user`, `path`, `chantier_name`)
+                  VALUES ( :id, :path, :chantier)";
+        $stmt = $pdo->prepare($query);
+        $stmt->bindValue(':id', intval($data['id']));
+        $stmt->bindValue(':path', $name);
+        $stmt->bindValue(':chantier', $data['chantier']);
+        $stmt->execute();
+        return true;
+    }
 }

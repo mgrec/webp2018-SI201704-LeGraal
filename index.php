@@ -161,6 +161,18 @@ $app->group('/admin/', function () {
 
 });
 
+$app->post( '/upload', function ($request, $response, $arg) {
+    $bindVar = [];
+    $pdo = $this->db;
+    $adminController = new adminController();
+    $data = $_POST;
+    $dataImg = $_FILES;
+    $adminController->addFile($data, $dataImg, $pdo);
+    return $response->withRedirect('admin/user/' . $data['id'], 200);
+
+});
+
+
 $app->post('/contact', function(Request $request) {
     $pdo = $this->db;
     $contactController = new contactController();
