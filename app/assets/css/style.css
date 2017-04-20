@@ -580,6 +580,7 @@ textarea {
 .nav ul {
   list-style: none; }
 
+<<<<<<< HEAD
 .wrapper {
   position: relative;
   margin: 0 60px; }
@@ -841,6 +842,11 @@ textarea {
 /*.main {
   padding: 0 60px;
   section {
+=======
+.main {
+  padding: 0 20px; }
+  .main section {
+>>>>>>> 486eb63ba1200ead5fe7e3d252f3505e640c0072
     width: 100%;
     height: 100%;
     padding-top: 60px;
@@ -853,9 +859,14 @@ textarea {
     &#home {
       background: url('../img/desktop/bg.jpg') no-repeat center center;
       background-size: cover;
+<<<<<<< HEAD
       height: 90vh;
 
       .home__block {
+=======
+      height: calc(100vh - 20px); }
+      .main section#home .home__block {
+>>>>>>> 486eb63ba1200ead5fe7e3d252f3505e640c0072
         position: absolute;
         top: 50%;
         left: 0;
@@ -913,17 +924,23 @@ textarea {
             color: $white;
             font-family: $montserrat-regular;
             position: relative;
+<<<<<<< HEAD
             z-index: 1;
           }
         }
         .block-title {
           text-align: center;
+=======
+            z-index: 1; }
+        .main section#whoarewe .whoarewe__content .block-title {
+>>>>>>> 486eb63ba1200ead5fe7e3d252f3505e640c0072
           padding-top: 135px;
           position: relative;
           .title {
             font-family: $montserrat-regular;
             color: $black;
             font-size: 36px;
+<<<<<<< HEAD
             text-align: center;
             padding-bottom: 15px;
 
@@ -931,6 +948,12 @@ textarea {
           .subtitle {
              font-family: $montserrat-regular;
             color: $blue;
+=======
+            padding-bottom: 15px; }
+          .main section#whoarewe .whoarewe__content .block-title .subtitle {
+            font-family: "Montserrat Regular";
+            color: #0A33E0;
+>>>>>>> 486eb63ba1200ead5fe7e3d252f3505e640c0072
             font-size: 23px;
             line-height: 35px;
           }
@@ -943,10 +966,19 @@ textarea {
             position: absolute;
             right: 0;
             bottom: -40px;
+<<<<<<< HEAD
             z-index: -1;
           }
         }
         .valors {
+=======
+            z-index: -1; }
+          .main section#whoarewe .whoarewe__content .block-title.right .title, .main section#whoarewe .whoarewe__content .block-title.right .subtitle {
+            text-align: right; }
+          .main section#whoarewe .whoarewe__content .block-title.right .lines {
+            left: 0; }
+        .main section#whoarewe .whoarewe__content .valors {
+>>>>>>> 486eb63ba1200ead5fe7e3d252f3505e640c0072
           display: block;
           text-align: center;
           margin-top: 100px;
@@ -958,10 +990,17 @@ textarea {
 
             .valor-title {
               font-size: 24px;
+<<<<<<< HEAD
               font-family: $montserrat-regular;
               padding-bottom: 15px;
             }
             .valor-description {
+=======
+              font-family: "Montserrat Regular";
+              padding-bottom: 15px;
+              color: #0A33E0; }
+            .main section#whoarewe .whoarewe__content .valors .valor .valor-description {
+>>>>>>> 486eb63ba1200ead5fe7e3d252f3505e640c0072
               font-size: 18px;
               font-family: $montserrat-light;
               line-height: 27px;
@@ -983,19 +1022,32 @@ textarea {
         text-align: right;
         font-family: $montserrat-regular;
         font-size: 23px;
+<<<<<<< HEAD
         color: $black;
       }
       .block-numbers {
         background-color: $black;
         width: 80%;
+=======
+        color: #000000; }
+      .main section#keynumber .block-numbers {
+        background-color: #000000;
+        width: 100%;
+>>>>>>> 486eb63ba1200ead5fe7e3d252f3505e640c0072
         height: 225px;
         margin: 145px auto 145px auto ;
         position: relative;
         .numbers{
           text-align: center;
           display: flex;
+<<<<<<< HEAD
           justify-content: space-around;
           padding-top: 80px;
+=======
+          -ms-flex-pack: distribute;
+              justify-content: space-around;
+          padding-top: 60px;
+>>>>>>> 486eb63ba1200ead5fe7e3d252f3505e640c0072
           position: relative;
           z-index: 1;
           .number{
@@ -1003,11 +1055,18 @@ textarea {
             .number-title {
               display: block;
               line-height: 60px;
+<<<<<<< HEAD
               font-family: $avenir-next-bold;
               font-size: 64px;
               color: $white;
             }
             .number-subtitle {
+=======
+              font-family: "Avenir Next Bold";
+              font-size: 48px;
+              color: #FFFFFF; }
+            .main section#keynumber .block-numbers .numbers .number .number-subtitle {
+>>>>>>> 486eb63ba1200ead5fe7e3d252f3505e640c0072
               display: block;
               font-family: $avenir-next-bold;
               font-size: 24px;
