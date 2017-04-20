@@ -60,3 +60,13 @@
     margin-right: 10px;
     vertical-align: bottom;
 }
+
+.facture-panel img{
+    width: 25px;
+    margin-right: 10px;
+    vertical-align: bottom;
+}
+
+.facture-panel .input-facture{
+    width: 30%;
+}
