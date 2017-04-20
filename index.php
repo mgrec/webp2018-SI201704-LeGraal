@@ -150,6 +150,12 @@ $app->group('/admin/', function () {
         $user = $adminController->getUser($id_user, $pdo);
         $bindVar['user_infos'] = $user;
         
+        $facture = $adminController->getFacture($id_user, $pdo);
+        $bindVar['user_facture'] = $facture;
+
+        $plan = $adminController->getPlan($id_user, $pdo);
+        $bindVar['user_plan'] = $plan;
+        
         if ($isConnect == true) {
             $bindVar['connected'] = true;
             return $this->view->render($response, 'admin/page/single-user.twig', $bindVar);

@@ -102,6 +102,26 @@ class adminRepository
 
         return $res;
     }
+    
+    public function getFactureAction($id_user, $pdo){
+        $query = "SELECT * FROM facture WHERE id_user = :id_user";
+        $stmt = $pdo->prepare($query);
+        $stmt->bindValue(':id_user', $id_user);
+        $stmt->execute();
+        $res = $stmt->fetchAll();
+
+        return $res;
+    }
+
+    public function getPlanAction($id_user, $pdo){
+        $query = "SELECT * FROM plan WHERE id_user = :id_user";
+        $stmt = $pdo->prepare($query);
+        $stmt->bindValue(':id_user', $id_user);
+        $stmt->execute();
+        $res = $stmt->fetchAll();
+
+        return $res;
+    }
 
     public function uploadFactureAction($data, $name, $pdo)
     {

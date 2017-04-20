@@ -54,3 +54,9 @@
 .content{
     margin: 50px auto;
 }
+
+.facture-panel img{
+    width: 25px;
+    margin-right: 10px;
+    vertical-align: bottom;
+}

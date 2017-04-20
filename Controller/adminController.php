@@ -95,9 +95,25 @@ class adminController
     
     public function getUser($id_user, $pdo){
         $repo = new adminRepository();
-        $admin = $repo->getUserAction($id_user, $pdo);
+        $user = $repo->getUserAction($id_user, $pdo);
 
-        return $admin;
+        return $user;
+    }
+    
+    public function getFacture($id_user, $pdo){
+        
+        $repo = new adminRepository();
+        $facture = $repo->getFactureAction($id_user,$pdo);
+        
+        return $facture;
+    }
+
+    public function getPlan($id_user, $pdo){
+
+        $repo = new adminRepository();
+        $plan = $repo->getPlanAction($id_user,$pdo);
+
+        return $plan;
     }
 
     public function addFile($data, $dataImg, $pdo)

@@ -10,10 +10,13 @@
         <div class="panel-body"><strong>Téléphone</strong> : ---</div>
     </div>
 
+    <hr>
 
     <h2>Fichier de l'utilisateur :</h2>
-    <div class="panel panel-default">
-        <div class="panel-heading">Facture
+    <div class="panel panel-default facture-panel">
+        <div class="panel-heading"><h3><img src="https://image.flaticon.com/icons/svg/201/201282.svg" alt="">Facture
+            </h3>
+            <hr>
             <form action="/upload" method="post" enctype="multipart/form-data">
                 <input type="hidden" value="{{ user_infos.id }}" name="id">
                 <input type="hidden" value="facture" name="fichier">
@@ -22,9 +25,14 @@
                 <input type="submit">
             </form>
         </div>
-        <div class="panel-body">Panel Content</div>
+        {% for item_facture in user_facture %}
+            <div class="panel-body">{{ item_facture.chantier_name }} - <a target="_blank"
+                                                                          href="{{ item_facture.path }}">Download</a>
+            </div>
+        {% endfor %}
 
-        <div class="panel-heading">Plan
+        <div class="panel-heading"><h3><img src="https://image.flaticon.com/icons/svg/149/149361.svg" alt="">Plan</h3>
+            <hr>
             <form action="/upload" method="post" enctype="multipart/form-data">
                 <input type="hidden" value="{{ user_infos.id }}" name="id">
                 <input type="hidden" value="plan" name="fichier">
@@ -33,7 +41,10 @@
                 <input type="submit">
             </form>
         </div>
-        <div class="panel-body">Panel Content</div>
+        {% for item_plan in user_plan %}
+            <div class="panel-body">{{ item_plan.chantier_name }} - <a target="_blank" href="{{ item_plan.path }}">Download</a>
+            </div>
+        {% endfor %}
     </div>
 </div>
 
