@@ -1,5 +1,5 @@
 .main {
-  padding: 0 20px;
+  padding: 20px;
   section {
     width: 100%;
     height: 100%;
@@ -266,12 +266,35 @@
         display: inline-block;
         background-repeat: no-repeat;
 
+        h2 {
+          text-align: right;
+          margin: 20px;
+          opacity: 0;
+        }
+
+        p.description {
+          text-align: right;
+          margin: 20px;
+          opacity: 0;
+        }
+
         &.block--left {
           transform: translate(-50%, 0);
           background-position: 100%;
 
           &.open {
             transform: translate(0%);
+
+            h2 {
+              opacity: 1;
+            }
+            p.description {
+              opacity: 1;
+                  max-width: 400px;
+                  position: absolute;
+                  display: block;
+                  right: 0;
+            }
           }
           &.close {
             transform: translate(-100%);
@@ -283,6 +306,13 @@
 
           &.open {
             transform: translate(0%,-100%);
+
+            h2 {
+              opacity: 1;
+            }
+            p.description {
+              opacity: 1;
+            }
           }
           &.close {
             transform: translate(100%,-100%);
@@ -311,7 +341,54 @@
         text-align: right;
         font-family: $montserrat-regular;
         font-size: 23px;
-        color: $black;
+        color: $black-light;
+      }
+      .works__block {
+        margin-top: 50px;
+        .visual {
+          display: inline-block;
+          width: 60%;
+          height: 370px;
+
+          &.nb1 {
+            background: url('../img/desktop/projet1.jpg') no-repeat center center;
+            background-size: cover;
+          }
+          &.nb2 {
+            background: url('../img/desktop/projet2.jpg') no-repeat center center;
+            background-size: cover;
+          }
+          &.nb3 {
+            background: url('../img/desktop/projet3.jpg') no-repeat center center;
+            background-size: cover;
+          }
+        }
+        .block-text {
+          display: inline-block;
+          padding: 125px 30px 0 0;
+          width: 35%;
+          height: 370px;
+          line-height: 370p;
+          vertical-align: top;
+          text-align: right;
+          background: url('../img/desktop/big-text.jpg') no-repeat center center;
+          background-size: cover;
+
+          .block-title {
+            font-family: $avenir-next-bold;
+            font-size: 23px;
+            color: $blue;
+          }
+          .block-description {
+            font-family: $montserrat-regular;
+            font-size: 18px;
+            color: $black-light;
+          }
+          &.left {
+            padding: 125px 0 0 30px;
+            text-align: left;
+          }
+        }
       }
     }
     &#partners {
@@ -325,8 +402,18 @@
       .subtitle {
         text-align: left;
         font-family: $montserrat-regular;
-        font-size: 23px;
+        font-size: 18px;
         color: $black;
+        max-width: 450px;
+      }
+      .partners__block{
+        ul{
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          padding: 50px;
+          
+        }
       }
     }
   }

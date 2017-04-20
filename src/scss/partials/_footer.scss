@@ -1,3 +1,40 @@
 .footer {
-
+  width: 96vw;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+  background-color: $blue;
+  margin: 15px auto;
+  .logo {
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    img {
+      width: 60px;
+    }
+  }
+  .nav {
+    display: inline-block;
+    vertical-align: top;
+    ul{
+      display: inline-block;
+      li{
+        display: inline-block;
+        margin-right: 50px;
+        &:first-of-type {
+          margin-left: 50px;
+        }
+        &:last-of-type {
+          margin-right: 0;
+        }
+        a {
+          color: $white;
+          text-decoration: none;
+          font-family: $montserrat-light;
+        }
+      }
+    }
+  }
 }

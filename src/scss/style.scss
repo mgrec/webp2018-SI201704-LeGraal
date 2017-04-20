@@ -26,9 +26,6 @@
 @import 'modules/_misc.scss';
 @import 'modules/_app.scss';
 
-// Enhancement modules
-@import 'modules/_breakpoints.scss';
-@import 'modules/_print.scss';
 
 //----------------------------------*\
 // PARTIALS
@@ -39,3 +36,7 @@
 @import 'partials/_sidebar.scss';
 @import 'partials/_main.scss';
 @import 'partials/_footer.scss';
+
+// Enhancement modules
+@import 'modules/_breakpoints.scss';
+@import 'modules/_print.scss';
