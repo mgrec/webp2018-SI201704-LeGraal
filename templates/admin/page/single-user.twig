@@ -13,10 +13,26 @@
 
     <h2>Fichier de l'utilisateur :</h2>
     <div class="panel panel-default">
-        <div class="panel-heading">Facture</div>
+        <div class="panel-heading">Facture
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <input type="hidden" value="{{ user_infos.id }}" name="id">
+                <input type="hidden" value="facture" name="fichier">
+                <input type="text" name="chantier">
+                <input type="file" name="pdf" id="pdf">
+                <input type="submit">
+            </form>
+        </div>
         <div class="panel-body">Panel Content</div>
 
-        <div class="panel-heading">Plan</div>
+        <div class="panel-heading">Plan
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <input type="hidden" value="{{ user_infos.id }}" name="id">
+                <input type="hidden" value="plan" name="fichier">
+                <input type="text" name="chantier">
+                <input type="file" name="pdf" id="pdf">
+                <input type="submit">
+            </form>
+        </div>
         <div class="panel-body">Panel Content</div>
     </div>
 </div>
