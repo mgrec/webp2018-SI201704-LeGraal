@@ -10,6 +10,7 @@ require_once "config.php";
 use Controller\indexController;
 use Controller\adminController;
 use Controller\contactController;
+use Controller\espClientController;
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
@@ -139,8 +140,54 @@ $app->group('/espClient/', function() {
         return $this->view->render($response, 'espClient/page/connexion.twig');
     });
 
+    $this->map(['GET', 'POST'], 'connexion', function($request, $response, $args) {
+        $bindVar = [];
+        $espClientController = new espClientController();
+        $pdo = $this->db;
+
+        $isConnect = $espClientController->isConnected();
+
+        if ($isConnect == true) {
+            return $response->withRedirect('home', 200);
+        }
+
+        if (isset($_POST['email']) && isset($_POST['password'])){
+            $array = $_POST;
+            $connected = $espClientController->logIn($array, $pdo);
+        }
+
+        if (isset($connected) && $connected == true){
+            return $response->withRedirect('home', 200);
+        } else {
+            return $response->withRedirect('login-page', 401);
+        }
+    });
+
     $this->map(['GET', 'POST'], 'home', function($request, $response, $arg) {
-        return $this->view->render($response, 'espClient/page/home.twig');
+        session_start();
+        $bindVar = [];
+        $espClientController = new espClientController();
+
+        if (isset($_SESSION['user'])){
+            $bindVar['user'] = $_SESSION['user'];
+        }
+
+        $isConnect = $espClientController->isConnected();
+
+        if ($isConnect == true) {
+            $bindVar['connected'] = true;
+            $bindVar['user'] = $_SESSION['user'];
+            return $this->view->render($response, 'espClient/page/home.twig', $bindVar);
+        } else {
+            return $response->withRedirect('login-page', 301);
+        }
+    });
+
+    $this->map(['GET', 'POST'], 'deconnexion', function ($request, $response, $arg) {
+        $espClientController = new espClientController();
+        $espClientController->logOut();
+
+        return $response->withRedirect('login-page', 200);
     });
 });
 

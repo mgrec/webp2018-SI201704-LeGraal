@@ -3,6 +3,55 @@
     font-family: "Montserrat Regular";
 }
 
+.containerEspClient{
+    width: 100vw;
+    height:100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: "Montserrat Regular";
+}
+
+.containerEspClient h1{
+    margin-bottom: 20px;
+}
+
+.formEspClient{
+    height: 30vh;
+    width: 500px;
+    border: 1px solid #0126E3;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.inputField{
+    display: flex;
+    flex-direction: column;
+}
+
+.inputField label{
+    margin-bottom: 10px;
+    color: #0126E3;
+}
+.inputField input{
+    border:none;
+    border-bottom: 1px solid #0126E3;
+    margin-bottom: 15px;
+}
+
+.formEspClient input[type='submit']{
+    border: 1px solid #0126E3;
+    padding: 5px 20px;
+    border-radius: 100px;
+    color: #fff;
+    background: #0126E3;
+    margin-top:10px;
+    font-size: 15px;
+}
+
 .header{
     width: 100%;
     height: 10vh;
@@ -30,6 +79,7 @@ h1 {
     padding: 20px 0;
     text-align: center;
     border: 1px solid #0126E3;
+    border-bottom: none;
     color: #0126E3;
     font-size: 18px;
     font-weight: lighter;
@@ -55,6 +105,24 @@ h1 {
 
 .list__lieu{
     color: #0126E3;
+}
+
+.blocUser{
+    display: flex;
+    align-items: center;
+}
+
+.blocUser p, .blocUser div{
+    display: inline-block;
+    color: #0126E3;
+}
+
+.blocUser div{
+    margin-left: 20px;
+}
+
+.blocUser img{
+    width:24px;
 }
 
 @media screen and (max-width: 768px) {
