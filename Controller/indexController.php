@@ -13,6 +13,7 @@ class indexController
 {
     public function render($name){
         echo "Hello " . $name;
+        
     }
 
     public function ContactTratement($msgReq, $corps){
