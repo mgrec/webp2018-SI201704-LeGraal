@@ -22,6 +22,11 @@ $app->get('/', function ($request, $response, $args) {
 
 //groupe routes : admin
 $app->group('/admin/', function () {
+
+    $this->get('', function($request, $response, $arg){
+        return $response->withRedirect('connexion', 401);
+    });
+
     //home admin
     $this->get('home', function ($request, $response, $arg) {
         session_start();
