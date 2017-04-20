@@ -545,7 +545,7 @@ textarea {
   list-style: none; }
 
 .main {
-  padding: 0 60px; }
+  padding: 0 20px; }
   .main section {
     width: 100%;
     height: 100%;
@@ -556,7 +556,7 @@ textarea {
     .main section#home {
       background: url("../img/desktop/bg.jpg") no-repeat center center;
       background-size: cover;
-      height: 90vh; }
+      height: calc(100vh - 20px); }
       .main section#home .home__block {
         position: absolute;
         top: 50%;
@@ -609,14 +609,12 @@ textarea {
             position: relative;
             z-index: 1; }
         .main section#whoarewe .whoarewe__content .block-title {
-          text-align: center;
           padding-top: 135px;
           position: relative; }
           .main section#whoarewe .whoarewe__content .block-title .title {
             font-family: "Montserrat Regular";
             color: #000000;
             font-size: 36px;
-            text-align: center;
             padding-bottom: 15px; }
           .main section#whoarewe .whoarewe__content .block-title .subtitle {
             font-family: "Montserrat Regular";
@@ -633,6 +631,10 @@ textarea {
             right: 0;
             bottom: -40px;
             z-index: -1; }
+          .main section#whoarewe .whoarewe__content .block-title.right .title, .main section#whoarewe .whoarewe__content .block-title.right .subtitle {
+            text-align: right; }
+          .main section#whoarewe .whoarewe__content .block-title.right .lines {
+            left: 0; }
         .main section#whoarewe .whoarewe__content .valors {
           display: block;
           text-align: center;
@@ -644,7 +646,8 @@ textarea {
             .main section#whoarewe .whoarewe__content .valors .valor .valor-title {
               font-size: 24px;
               font-family: "Montserrat Regular";
-              padding-bottom: 15px; }
+              padding-bottom: 15px;
+              color: #0A33E0; }
             .main section#whoarewe .whoarewe__content .valors .valor .valor-description {
               font-size: 18px;
               font-family: "Montserrat Light";
@@ -663,7 +666,7 @@ textarea {
         color: #000000; }
       .main section#keynumber .block-numbers {
         background-color: #000000;
-        width: 80%;
+        width: 100%;
         height: 225px;
         margin: 145px auto 145px auto;
         position: relative; }
@@ -673,7 +676,7 @@ textarea {
           display: flex;
           -ms-flex-pack: distribute;
               justify-content: space-around;
-          padding-top: 80px;
+          padding-top: 60px;
           position: relative;
           z-index: 1; }
           .main section#keynumber .block-numbers .numbers .number {
@@ -682,7 +685,7 @@ textarea {
               display: block;
               line-height: 60px;
               font-family: "Avenir Next Bold";
-              font-size: 64px;
+              font-size: 48px;
               color: #FFFFFF; }
             .main section#keynumber .block-numbers .numbers .number .number-subtitle {
               display: block;

@@ -1,5 +1,5 @@
 .main {
-  padding: 0 60px;
+  padding: 0 20px;
   section {
     width: 100%;
     height: 100%;
@@ -13,7 +13,7 @@
     &#home {
       background: url('../img/desktop/bg.jpg') no-repeat center center;
       background-size: cover;
-      height: 90vh;
+      height: calc(100vh - 20px);
 
       .home__block {
         position: absolute;
@@ -77,14 +77,12 @@
           }
         }
         .block-title {
-          text-align: center;
           padding-top: 135px;
           position: relative;
           .title {
             font-family: $montserrat-regular;
             color: $black;
             font-size: 36px;
-            text-align: center;
             padding-bottom: 15px;
 
           }
@@ -105,6 +103,14 @@
             bottom: -40px;
             z-index: -1;
           }
+          &.right {
+            .title,.subtitle{
+              text-align: right;
+            }
+            .lines {
+              left: 0;
+            }
+          }
         }
         .valors {
           display: block;
@@ -120,6 +126,7 @@
               font-size: 24px;
               font-family: $montserrat-regular;
               padding-bottom: 15px;
+              color: $blue;
             }
             .valor-description {
               font-size: 18px;
@@ -147,7 +154,7 @@
       }
       .block-numbers {
         background-color: $black;
-        width: 80%;
+        width: 100%;
         height: 225px;
         margin: 145px auto 145px auto ;
         position: relative;
@@ -155,7 +162,7 @@
           text-align: center;
           display: flex;
           justify-content: space-around;
-          padding-top: 80px;
+          padding-top: 60px;
           position: relative;
           z-index: 1;
           .number{
@@ -164,7 +171,7 @@
               display: block;
               line-height: 60px;
               font-family: $avenir-next-bold;
-              font-size: 64px;
+              font-size: 48px;
               color: $white;
             }
             .number-subtitle {
