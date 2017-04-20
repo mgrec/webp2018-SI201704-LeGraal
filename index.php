@@ -36,6 +36,11 @@ $app->group('/admin/', function () {
         session_start();
         $bindVar = [];
         $adminController = new adminController();
+        $pdo = $this->db;
+
+        $users = $adminController->getAllUsers($pdo);
+        $usersCount = sizeof($users);
+        $bindVar['users_count'] = (int)$usersCount;
 
         if (isset($_SESSION['user_admin'])){
             $bindVar['user_admin'] = $_SESSION['user_admin'];
@@ -47,7 +52,7 @@ $app->group('/admin/', function () {
             $bindVar['connected'] = true;
             return $this->view->render($response, 'admin/page/home.twig', $bindVar);
         } else {
-            return $response->withRedirect('connexion', 301);
+            return $response->withRedirect('connexion', 401);
         }
     })->setName('adminHome');
 
@@ -102,6 +107,9 @@ $app->group('/admin/', function () {
         $adminController = new adminController();
         $pdo = $this->db;
 
+        $adminInfos = $adminController->getAdminInformations($pdo);
+        $bindVar['admin_infos'] = $adminInfos;
+
         $isConnect = $adminController->isAdminConnect();
 
         if ($isConnect == true) {
@@ -133,6 +141,26 @@ $app->group('/admin/', function () {
         } else {
             return $response->withRedirect('connexion', 301);
         }
+    });
+
+    $this->map(['GET', 'POST'], 'user/{id}', function ($request, $response, $arg) {
+        $bindVar = [];
+        $adminController = new adminController();
+        $pdo = $this->db;
+        $isConnect = $adminController->isAdminConnect();
+        $id_user = $arg['id'];
+
+        
+        $user = $adminController->getUser($id_user, $pdo);
+        $bindVar['user_infos'] = $user;
+        
+        if ($isConnect == true) {
+            $bindVar['connected'] = true;
+            return $this->view->render($response, 'admin/page/single-user.twig', $bindVar);
+        } else {
+            return $response->withRedirect('connexion', 301);
+        }
+
     });
 
 });

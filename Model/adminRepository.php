@@ -83,4 +83,23 @@ class adminRepository
         
         return $res;
     }
+    
+    public function getAdminInformationsAction($pdo){
+        $query = "SELECT * FROM administrators";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        $res = $stmt->fetch();
+
+        return $res;
+    }
+
+    public function getUserAction($id_user, $pdo){
+        $query = "SELECT * FROM users WHERE id = :id_user";
+        $stmt = $pdo->prepare($query);
+        $stmt->bindValue(':id_user', $id_user);
+        $stmt->execute();
+        $res = $stmt->fetch();
+
+        return $res;
+    }
 }

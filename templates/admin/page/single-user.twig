@@ -1,0 +1,25 @@
+{% include 'admin/block/header.twig' %}
+
+<div class="container">
+    <h2>Informations de l'utilisateur :</h2>
+    <div class="panel panel-default">
+        <div class="panel-heading">{{ user_infos.name }}</div>
+        <div class="panel-body"><strong>Nom</strong> : {{ user_infos.lastname }}</div>
+        <div class="panel-body"><strong>Prénom</strong> : {{ user_infos.name }}</div>
+        <div class="panel-body"><strong>Email</strong> : {{ user_infos.email }}</div>
+        <div class="panel-body"><strong>Téléphone</strong> : ---</div>
+    </div>
+
+
+    <h2>Fichier de l'utilisateur :</h2>
+    <div class="panel panel-default">
+        <div class="panel-heading">Facture</div>
+        <div class="panel-body">Panel Content</div>
+
+        <div class="panel-heading">Plan</div>
+        <div class="panel-body">Panel Content</div>
+    </div>
+</div>
+
+
+{% include 'admin/block/footer.twig' %}
