@@ -150,6 +150,12 @@ $app->group('/admin/', function () {
         $user = $adminController->getUser($id_user, $pdo);
         $bindVar['user_infos'] = $user;
         
+        $facture = $adminController->getFacture($id_user, $pdo);
+        $bindVar['user_facture'] = $facture;
+
+        $plan = $adminController->getPlan($id_user, $pdo);
+        $bindVar['user_plan'] = $plan;
+        
         if ($isConnect == true) {
             $bindVar['connected'] = true;
             return $this->view->render($response, 'admin/page/single-user.twig', $bindVar);
@@ -160,6 +166,18 @@ $app->group('/admin/', function () {
     });
 
 });
+
+$app->post( '/upload', function ($request, $response, $arg) {
+    $bindVar = [];
+    $pdo = $this->db;
+    $adminController = new adminController();
+    $data = $_POST;
+    $dataImg = $_FILES;
+    $adminController->addFile($data, $dataImg, $pdo);
+    return $response->withRedirect('admin/user/' . $data['id'], 200);
+
+});
+
 
 $app->post('/contact', function(Request $request) {
     $pdo = $this->db;

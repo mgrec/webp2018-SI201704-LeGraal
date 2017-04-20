@@ -102,4 +102,48 @@ class adminRepository
 
         return $res;
     }
+    
+    public function getFactureAction($id_user, $pdo){
+        $query = "SELECT * FROM facture WHERE id_user = :id_user";
+        $stmt = $pdo->prepare($query);
+        $stmt->bindValue(':id_user', $id_user);
+        $stmt->execute();
+        $res = $stmt->fetchAll();
+
+        return $res;
+    }
+
+    public function getPlanAction($id_user, $pdo){
+        $query = "SELECT * FROM plan WHERE id_user = :id_user";
+        $stmt = $pdo->prepare($query);
+        $stmt->bindValue(':id_user', $id_user);
+        $stmt->execute();
+        $res = $stmt->fetchAll();
+
+        return $res;
+    }
+
+    public function uploadFactureAction($data, $name, $pdo)
+    {
+        $query = "INSERT INTO `facture`( `id_user`, `path`, `chantier_name`)
+                  VALUES ( :id, :path, :chantier)";
+        $stmt = $pdo->prepare($query);
+        $stmt->bindValue(':id', intval($data['id']));
+        $stmt->bindValue(':path', $name);
+        $stmt->bindValue(':chantier', $data['chantier']);
+        $stmt->execute();
+        return true;
+    }
+
+    public function uploadPlanAction($data, $name, $pdo)
+    {
+        $query = "INSERT INTO `plan`( `id_user`, `path`, `chantier_name`)
+                  VALUES ( :id, :path, :chantier)";
+        $stmt = $pdo->prepare($query);
+        $stmt->bindValue(':id', intval($data['id']));
+        $stmt->bindValue(':path', $name);
+        $stmt->bindValue(':chantier', $data['chantier']);
+        $stmt->execute();
+        return true;
+    }
 }

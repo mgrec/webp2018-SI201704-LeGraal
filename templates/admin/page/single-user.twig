@@ -10,14 +10,43 @@
         <div class="panel-body"><strong>Téléphone</strong> : ---</div>
     </div>
 
+    <hr>
 
     <h2>Fichier de l'utilisateur :</h2>
-    <div class="panel panel-default">
-        <div class="panel-heading">Facture</div>
-        <div class="panel-body">Panel Content</div>
+    <div class="panel panel-default facture-panel">
+        <div class="panel-heading"><h3><img src="https://image.flaticon.com/icons/svg/201/201282.svg" alt="">Facture
+            </h3>
+            <hr>
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <input type="hidden" value="{{ user_infos.id }}" name="id">
+                <input type="hidden" value="facture" name="fichier">
+                <label for="usr">Nom du chantier:</label>
+                <input type="text" class="input-facture form-control" name="chantier">
+                <input type="file" name="pdf" id="pdf">
+                <button type="submit" class="btn btn-info">Valider</button>
+            </form>
+        </div>
+        {% for item_facture in user_facture %}
+            <div class="panel-body">{{ item_facture.chantier_name }} - <a target="_blank"
+                                                                          href="{{ item_facture.path }}">Download</a>
+            </div>
+        {% endfor %}
 
-        <div class="panel-heading">Plan</div>
-        <div class="panel-body">Panel Content</div>
+        <div class="panel-heading"><h3><img src="https://image.flaticon.com/icons/svg/149/149361.svg" alt="">Plan</h3>
+            <hr>
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <input type="hidden" value="{{ user_infos.id }}" name="id">
+                <input type="hidden" value="plan" name="fichier">
+                <label for="usr">Nom du chantier:</label>
+                <input type="text" class="input-facture form-control" name="chantier">
+                <input type="file" name="pdf" id="pdf">
+                <button type="submit" class="btn btn-info">Valider</button>
+            </form>
+        </div>
+        {% for item_plan in user_plan %}
+            <div class="panel-body">{{ item_plan.chantier_name }} - <a target="_blank" href="{{ item_plan.path }}">Download</a>
+            </div>
+        {% endfor %}
     </div>
 </div>
 

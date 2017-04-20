@@ -6,6 +6,7 @@
  * Time: 09:43
  */
 
+
 namespace Controller;
 
 use Model\adminRepository;
@@ -94,9 +95,54 @@ class adminController
     
     public function getUser($id_user, $pdo){
         $repo = new adminRepository();
-        $admin = $repo->getUserAction($id_user, $pdo);
+        $user = $repo->getUserAction($id_user, $pdo);
 
-        return $admin;
+        return $user;
+    }
+    
+    public function getFacture($id_user, $pdo){
+        
+        $repo = new adminRepository();
+        $facture = $repo->getFactureAction($id_user,$pdo);
+        
+        return $facture;
+    }
+
+    public function getPlan($id_user, $pdo){
+
+        $repo = new adminRepository();
+        $plan = $repo->getPlanAction($id_user,$pdo);
+
+        return $plan;
+    }
+
+    public function addFile($data, $dataImg, $pdo)
+    {
+        if ($data['fichier'] == "facture") {
+            $dirname = '/app/assets/pdf/facture/';
+        } elseif ($data['fichier'] == "plan") {
+            $dirname = '/app/assets/pdf/plan/';
+        }
+
+        if (!empty($dataImg['pdf'])) {
+            $img = $dataImg['pdf'];
+            $name = $dirname . $img['name'];
+            $ext = strtolower(substr($img['name'], -3));
+            $allow_ext = array('jpg', 'png', 'tif', 'gif', 'jpeg', 'pdf');
+            if (in_array($ext, $allow_ext)) {
+                move_uploaded_file($img['tmp_name'], '.' . $name);
+            } else {
+                $error = "votre fichier n'est pas une image";
+                echo $error;
+            }
+        }
+        $repo = new adminRepository();
+        if ($data['fichier'] == "facture") {
+            $repo->uploadFactureAction($data, $name, $pdo);
+        } elseif ($data['fichier'] == "plan") {
+            $repo->uploadPlanAction($data, $name, $pdo);
+        }
+        return $data['id'];
     }
 
 }
