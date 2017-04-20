@@ -20,16 +20,6 @@ $app->get('/', function ($request, $response, $args) {
 })->setName('profile');
 
 
-$app->post('/contact', function (Request $request) {
-
-    $indexController = new indexController();
-
-    $req = $request->getParams();
-    $msgReq = $req['nbrMessage'];
-    $corps = $req['corps'];
-    $indexController->ContactTratement($msgReq, $corps);
-});
-
 //groupe routes : admin
 $app->group('/admin/', function () {
     //home admin
