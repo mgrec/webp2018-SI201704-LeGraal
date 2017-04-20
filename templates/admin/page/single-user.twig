@@ -27,8 +27,7 @@
             </form>
         </div>
         {% for item_facture in user_facture %}
-            <div class="panel-body">{{ item_facture.chantier_name }} - <a target="_blank"
-                                                                          href="{{ item_facture.path }}">Download</a>
+            <div class="panel-body">{{ item_facture.chantier_name }} - <a target="_blank" href="{{ item_facture.path }}">Download</a>
             </div>
         {% endfor %}
 
