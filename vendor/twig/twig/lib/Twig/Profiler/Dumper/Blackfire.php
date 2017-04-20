@@ -11,8 +11,10 @@
 
 /**
  * @author Fabien Potencier <fabien@symfony.com>
+ *
+ * @final
  */
-final class Twig_Profiler_Dumper_Blackfire
+class Twig_Profiler_Dumper_Blackfire
 {
     public function dump(Twig_Profiler_Profile $profile)
     {
@@ -20,7 +22,7 @@ final class Twig_Profiler_Dumper_Blackfire
         $this->dumpProfile('main()', $profile, $data);
         $this->dumpChildren('main()', $profile, $data);
 
-        $start = microtime(true);
+        $start = sprintf('%f', microtime(true));
         $str = <<<EOF
 file-format: BlackfireProbe
 cost-dimensions: wt mu pmu

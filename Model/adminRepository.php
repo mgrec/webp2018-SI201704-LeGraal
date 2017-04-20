@@ -44,7 +44,7 @@ class adminRepository
         $stmt->execute();
         $res = $stmt->fetch();
 
-        if($res == null) {
+        if ($res == null) {
             $query = "INSERT INTO users (name, lastname, email, password) VALUES (:name, :lastname, :email, :password)";
             $stmt = $pdo->prepare($query);
             $stmt->bindValue(':name', $array['name']);
@@ -66,11 +66,40 @@ class adminRepository
             $arrayRtn['code'] = true;
 
             return $arrayRtn;
-        }else{
+        } else {
             $arrayRtn = [];
             $arrayRtn['code'] = false;
-            
+
             return $arrayRtn;
         }
+    }
+
+    public function getAllUsersAction($pdo)
+    {
+        $query = "SELECT * FROM users";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        $res = $stmt->fetchAll();
+        
+        return $res;
+    }
+    
+    public function getAdminInformationsAction($pdo){
+        $query = "SELECT * FROM administrators";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        $res = $stmt->fetch();
+
+        return $res;
+    }
+
+    public function getUserAction($id_user, $pdo){
+        $query = "SELECT * FROM users WHERE id = :id_user";
+        $stmt = $pdo->prepare($query);
+        $stmt->bindValue(':id_user', $id_user);
+        $stmt->execute();
+        $res = $stmt->fetch();
+
+        return $res;
     }
 }

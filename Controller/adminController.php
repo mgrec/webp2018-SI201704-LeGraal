@@ -80,7 +80,23 @@ class adminController
     }
 
     public function getAllUsers($pdo){
+        $repo = new adminRepository();
+        $users = $repo->getAllUsersAction($pdo);
+        return $users;
+    }
+    
+    public function getAdminInformations($pdo){
+        $repo = new adminRepository();
+        $admin = $repo->getAdminInformationsAction($pdo);
+        
+        return $admin;
+    }
+    
+    public function getUser($id_user, $pdo){
+        $repo = new adminRepository();
+        $admin = $repo->getUserAction($id_user, $pdo);
 
+        return $admin;
     }
 
 }

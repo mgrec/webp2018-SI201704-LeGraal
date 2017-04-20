@@ -67,6 +67,9 @@ body, html {
   min-height: 100vh;
   overflow-x: hidden; }
 
+a {
+  text-decoration: none; }
+
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Change the default font family in all browsers (opinionated).
@@ -473,6 +476,33 @@ textarea {
   color: #fff;
   text-shadow: none; }
 
+.sticky__navigation {
+  position: fixed;
+  top: 50%;
+  right: 10px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  text-align: right; }
+  .sticky__navigation a {
+    position: relative;
+    color: transparent; }
+    .sticky__navigation a:before {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: -10px;
+      right: 0;
+      height: 2px;
+      width: 20px;
+      border-top: 1px solid #000; }
+    .sticky__navigation a.active {
+      margin-top: 15px;
+      color: #0A33E0; }
+      .sticky__navigation a.active:before {
+        width: 60px; }
+
 @media print {
   * {
     background: transparent !important;
@@ -515,8 +545,12 @@ textarea {
 .header {
   width: 100vw;
   height: 60px;
-  line-height: 60px;
-  text-align: center;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
   position: fixed;
   z-index: 50;
   background-color: #FFFFFF; }
@@ -524,6 +558,8 @@ textarea {
     display: inline-block;
     vertical-align: top;
     text-align: left; }
+    .header .logo img {
+      width: 60px; }
   .header nav {
     display: inline-block;
     vertical-align: top; }
@@ -545,7 +581,7 @@ textarea {
   list-style: none; }
 
 .main {
-  padding: 0 60px; }
+  padding: 0 20px; }
   .main section {
     width: 100%;
     height: 100%;
@@ -556,7 +592,7 @@ textarea {
     .main section#home {
       background: url("../img/desktop/bg.jpg") no-repeat center center;
       background-size: cover;
-      height: 90vh; }
+      height: calc(100vh - 20px); }
       .main section#home .home__block {
         position: absolute;
         top: 50%;
@@ -609,14 +645,12 @@ textarea {
             position: relative;
             z-index: 1; }
         .main section#whoarewe .whoarewe__content .block-title {
-          text-align: center;
           padding-top: 135px;
           position: relative; }
           .main section#whoarewe .whoarewe__content .block-title .title {
             font-family: "Montserrat Regular";
             color: #000000;
             font-size: 36px;
-            text-align: center;
             padding-bottom: 15px; }
           .main section#whoarewe .whoarewe__content .block-title .subtitle {
             font-family: "Montserrat Regular";
@@ -633,6 +667,10 @@ textarea {
             right: 0;
             bottom: -40px;
             z-index: -1; }
+          .main section#whoarewe .whoarewe__content .block-title.right .title, .main section#whoarewe .whoarewe__content .block-title.right .subtitle {
+            text-align: right; }
+          .main section#whoarewe .whoarewe__content .block-title.right .lines {
+            left: 0; }
         .main section#whoarewe .whoarewe__content .valors {
           display: block;
           text-align: center;
@@ -644,7 +682,8 @@ textarea {
             .main section#whoarewe .whoarewe__content .valors .valor .valor-title {
               font-size: 24px;
               font-family: "Montserrat Regular";
-              padding-bottom: 15px; }
+              padding-bottom: 15px;
+              color: #0A33E0; }
             .main section#whoarewe .whoarewe__content .valors .valor .valor-description {
               font-size: 18px;
               font-family: "Montserrat Light";
@@ -663,7 +702,7 @@ textarea {
         color: #000000; }
       .main section#keynumber .block-numbers {
         background-color: #000000;
-        width: 80%;
+        width: 100%;
         height: 225px;
         margin: 145px auto 145px auto;
         position: relative; }
@@ -673,7 +712,7 @@ textarea {
           display: flex;
           -ms-flex-pack: distribute;
               justify-content: space-around;
-          padding-top: 80px;
+          padding-top: 60px;
           position: relative;
           z-index: 1; }
           .main section#keynumber .block-numbers .numbers .number {
@@ -682,7 +721,7 @@ textarea {
               display: block;
               line-height: 60px;
               font-family: "Avenir Next Bold";
-              font-size: 64px;
+              font-size: 48px;
               color: #FFFFFF; }
             .main section#keynumber .block-numbers .numbers .number .number-subtitle {
               display: block;
@@ -734,9 +773,79 @@ textarea {
         z-index: -1;
         top: 200px;
         left: 180px; }
-    .main section#expertise {
-      background-color: lightcoral; }
+    .main section#expertise .title {
+      text-align: left;
+      font-family: "Avenir Next Bold";
+      font-size: 46px;
+      color: #0A33E0; }
+    .main section#expertise .subtitle {
+      text-align: left;
+      font-family: "Montserrat Regular";
+      font-size: 23px;
+      color: #000000;
+      margin-bottom: 145px; }
+    .main section#expertise .expertise__block {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      overflow: hidden; }
+    .main section#expertise .block {
+      width: 100%;
+      float: left;
+      height: 300px;
+      background-size: 50%;
+      background-position: 100%;
+      display: inline-block;
+      background-repeat: no-repeat; }
+      .main section#expertise .block.block--left {
+        -ms-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+        background-position: 100%; }
+        .main section#expertise .block.block--left.open {
+          -ms-transform: translate(0%);
+              transform: translate(0%); }
+        .main section#expertise .block.block--left.close {
+          -ms-transform: translate(-100%);
+              transform: translate(-100%); }
+      .main section#expertise .block.block--right {
+        -ms-transform: translate(50%, -100%);
+            transform: translate(50%, -100%);
+        background-position: 0%; }
+        .main section#expertise .block.block--right.open {
+          -ms-transform: translate(0%, -100%);
+              transform: translate(0%, -100%); }
+        .main section#expertise .block.block--right.close {
+          -ms-transform: translate(100%, -100%);
+              transform: translate(100%, -100%); }
+    .main section#expertise .expertise__block--black {
+      height: 100px;
+      width: 80%;
+      background: black;
+      position: absolute;
+      bottom: -100px;
+      margin: 0 10%;
+      background-color: #000000; }
+    .main section#works {
+      margin-top: 145px; }
+      .main section#works .title {
+        text-align: right;
+        font-family: "Avenir Next Bold";
+        font-size: 46px;
+        color: #0A33E0; }
+      .main section#works .subtitle {
+        text-align: right;
+        font-family: "Montserrat Regular";
+        font-size: 23px;
+        color: #000000; }
     .main section#partners {
-      background-color: lightgreen; }
-    .main section#contact {
-      background-color: lightcyan; }
+      margin-top: 145px; }
+      .main section#partners .title {
+        text-align: left;
+        font-family: "Avenir Next Bold";
+        font-size: 46px;
+        color: #0A33E0; }
+      .main section#partners .subtitle {
+        text-align: left;
+        font-family: "Montserrat Regular";
+        font-size: 23px;
+        color: #000000; }
