@@ -836,7 +836,43 @@ textarea {
         text-align: right;
         font-family: "Montserrat Regular";
         font-size: 23px;
-        color: #000000; }
+        color: #1E1E1E; }
+      .main section#works .works__block {
+        margin-top: 50px; }
+        .main section#works .works__block .visual {
+          display: inline-block;
+          width: 60%;
+          height: 370px; }
+          .main section#works .works__block .visual.nb1 {
+            background: url("../img/desktop/projet1.jpg") no-repeat center center;
+            background-size: cover; }
+          .main section#works .works__block .visual.nb2 {
+            background: url("../img/desktop/projet2.jpg") no-repeat center center;
+            background-size: cover; }
+          .main section#works .works__block .visual.nb3 {
+            background: url("../img/desktop/projet3.jpg") no-repeat center center;
+            background-size: cover; }
+        .main section#works .works__block .block-text {
+          display: inline-block;
+          padding: 125px 30px 0 0;
+          width: 35%;
+          height: 370px;
+          line-height: 370p;
+          vertical-align: top;
+          text-align: right;
+          background: url("../img/desktop/big-text.jpg") no-repeat center center;
+          background-size: cover; }
+          .main section#works .works__block .block-text .block-title {
+            font-family: "Avenir Next Bold";
+            font-size: 23px;
+            color: #0A33E0; }
+          .main section#works .works__block .block-text .block-description {
+            font-family: "Montserrat Regular";
+            font-size: 18px;
+            color: #1E1E1E; }
+          .main section#works .works__block .block-text.left {
+            padding: 125px 0 0 30px;
+            text-align: left; }
     .main section#partners {
       margin-top: 145px; }
       .main section#partners .title {
@@ -847,5 +883,49 @@ textarea {
       .main section#partners .subtitle {
         text-align: left;
         font-family: "Montserrat Regular";
-        font-size: 23px;
-        color: #000000; }
+        font-size: 18px;
+        color: #000000;
+        max-width: 450px; }
+      .main section#partners .partners__block ul {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+        -ms-flex-align: center;
+            align-items: center;
+        padding: 50px; }
+
+.footer {
+  width: 96vw;
+  height: 60px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  z-index: 50;
+  background-color: #0A33E0;
+  margin: 15px auto; }
+  .footer .logo {
+    display: inline-block;
+    vertical-align: top;
+    text-align: left; }
+    .footer .logo img {
+      width: 60px; }
+  .footer .nav {
+    display: inline-block;
+    vertical-align: top; }
+    .footer .nav ul {
+      display: inline-block; }
+      .footer .nav ul li {
+        display: inline-block;
+        margin-right: 50px; }
+        .footer .nav ul li:first-of-type {
+          margin-left: 50px; }
+        .footer .nav ul li:last-of-type {
+          margin-right: 0; }
+        .footer .nav ul li a {
+          color: #FFFFFF;
+          text-decoration: none;
+          font-family: "Montserrat Light"; }
