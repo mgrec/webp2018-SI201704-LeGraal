@@ -10,6 +10,8 @@
 
     <link href="//www.google-analytics.com" rel="dns-prefetch">
     <link href="//ajax.googleapis.com" rel="dns-prefetch">
+    <link rel="stylesheet" type="text/css" href="assets/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/slick/slick-theme.css"/>
     <link href="assets/css/style.min.css" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" href="assets/img/favicons/favicon-32x32.png" sizes="32x32">
@@ -21,6 +23,11 @@
     <script src="assets/components/modernizr/modernizr.js"></script>
   </head>
   <body>
+    <div class="st-burger-icon-container">
+      <div class="st-burger-icon st-burger-icon--large">
+        <span></span>
+      </div>
+    </div>
     <header class="header" role="banner">
       <div class="logo">
         <a href="#home">
@@ -44,11 +51,14 @@
           <li>
             <a href="#contact">Contact</a>
           </li>
+          <li>
+            <a href="" class="customers__space">Espace clients</a>
+          </li>
         </ul>
       </nav>
     </header>
     <div class="main">
-      <section id="home" class="section home scrollspy" style="background-image: url('assets/img/home.jpg');">
+      <section id="home" class="section home scrollspy" style="background-image: url('assets/img/desktop/bg.jpg');">
         <img src="assets/img/logo_uandd.svg" alt="U&D" width="200">
       </section>
       <section id="whoarewe" class="section whoarewe scrollspy">
@@ -66,6 +76,15 @@
               </p>
             </div>
             <div class="block-title">
+              <h3 class="title">
+                Lorem ipsum dolor sit amet
+              </h3>
+              <p class="subtitle">
+                consectetur adipiscing elit. Pellentesque <br> pulvinar auctor tincidunt.
+              </p>
+              <span class="lines"></span>
+            </div>
+            <div class="block-title right">
               <h3 class="title">
                 Lorem ipsum dolor sit amet
               </h3>
@@ -129,19 +148,20 @@
           <div class="block-numbers">
             <ul class="numbers">
               <li class="number">
-                <span class="number-title">50</span>
-                <span class="number-subtitle">Employés</span>
-                <span class="number-description">À votre service</span>
+                <span class="number-title">30%</span>
+                <span class="number-description">Croissance économique.</span>
               </li>
               <li class="number">
-                <span class="number-title">75</span>
-                <span class="number-subtitle">Chantiers</span>
-                <span class="number-description">Réussis</span>
+                <span class="number-title">90%</span>
+                <span class="number-description">Satisfactions clients.</span>
               </li>
               <li class="number">
-                <span class="number-title">1500</span>
-                <span class="number-subtitle">Tonnes</span>
-                <span class="number-description">De matériaux utilisés</span>
+                <span class="number-title">20 200m²</span>
+                <span class="number-description">m² de construction.</span>
+              </li>
+              <li class="number">
+                <span class="number-title">5131</span>
+                <span class="number-description">d'isolation thermique.</span>
               </li>
             </ul>
           </div>
@@ -153,19 +173,31 @@
       <section id="expertise" class="section expertise scrollspy">
       <div class="wrapper">
         <h2 class="title">
-          Chiffres Clés.
+          Savoir faire.
         </h2>
         <p class="subtitle">
           Bla bla bla bla
         </p>
         <div class="expertise__block">
           <div class="block block--left panel-left-open" style="background-image: url('assets/img/gros-oeuvre.jpg');">
-              <h1>This is one half</h1>
-              <p><a class="btn btn-warning btn-lg">Read More</a></p>
+              <h2>This is one half</h2>
+              <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
           </div>
           <div class="block block--right panel-right-open" style="background-image: url('assets/img/isolation.jpg');">
-              <h1>This is one half</h1>
-              <p><a class="btn btn-warning btn-lg">Read More</a></p>
+              <h2>This is one half</h2>
+              <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+          </div>
+        </div>
+        <div class="slick-block__content">
+          <div class="element">
+            <h3>Murs porteurs</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pulvinar auctor tincidunt. Lorem ipsum dolor sit amet.</p>
+          </div>
+          <div class="element">
+            <h3>Poutres et poteaux</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pulvinar auctor tincidunt. Lorem ipsum dolor sit amet.</p>
           </div>
         </div>
         <div class="expertise__block--black"></div>
@@ -200,6 +232,7 @@
       </nav>
 
     <script src="assets/components/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/slick/slick.min.js"></script>
     <script src="assets/js/scripts.min.js"></script>
     <script src="assets/js/scroll.js"></script>
 
