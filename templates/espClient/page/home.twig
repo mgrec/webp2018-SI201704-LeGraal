@@ -1,0 +1,26 @@
+{% include 'espClient/block/header.twig' %}
+<div class="container">
+    <header class="header">
+        <h1>Mes Chantiers</h1>
+        <div class="blocUser">
+            <p>{{ username }}</p>
+            <div>deconnexion</div>
+        </div>
+    </header>
+    <div class="listHeader">
+        <ul>
+            <li>Mes factures</li>
+            <li>Mes plans</li>
+        </ul>
+    </div>
+    <div class="list">
+        <ul>
+            <li>
+                <p class="list__lieu">maison</p>
+                <p><b>Livraison</b> : </p>
+                <p>picto</p>
+            </li>
+        </ul>
+    </div>
+</div>
+{% include 'espClient/block/footer.twig' %}
