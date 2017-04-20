@@ -561,7 +561,7 @@ textarea {
     .main section .wrapper {
       padding: 0 140px; }
     .main section#home {
-      background: url("../img/desktop/bg.jpg") no-repeat center center;
+      background: url("../img/desktop/bg-desktop.jpg") no-repeat center center;
       background-size: cover;
       height: calc(100vh - 20px); }
       .main section#home .home__block {
@@ -646,6 +646,9 @@ textarea {
           display: block;
           text-align: center;
           margin-top: 100px; }
+          .main section#whoarewe .whoarewe__content .valors img {
+            width: 120px;
+            height: 120px; }
           .main section#whoarewe .whoarewe__content .valors .valor {
             display: inline-block; }
             .main section#whoarewe .whoarewe__content .valors .valor:first-of-type {
@@ -924,6 +927,26 @@ textarea {
 @media only screen and (max-width: 894px) {
   .sticky__navigation {
     display: none !important; }
+  .footer {
+    height: 250px;
+    -ms-flex-direction: column;
+        flex-direction: column; }
+    .footer .nav {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+      .footer .nav ul {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+            flex-direction: column;
+        text-align: center; }
+        .footer .nav ul li {
+          margin-right: 0px;
+          height: 35px; }
+          .footer .nav ul li:first-of-type {
+            margin-left: 0px; }
   .st-burger-icon-container {
     z-index: 99999999999;
     position: absolute;
@@ -1116,7 +1139,32 @@ textarea {
         text-transform: uppercase;
         font-family: "Montserrat Regular"; }
     .main section#expertise .expertise__block--black {
-      display: none; } }
+      display: none; }
+    .main section#works .works__block.flex-reverse {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse; }
+    .main section#works .works__block .block-text {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+      text-align: center;
+      height: 185px;
+      padding: 35px 0; }
+      .main section#works .works__block .block-text.left {
+        text-align: center;
+        padding: 35px 0; }
+    .main section#works .works__block .visual {
+      width: 100%; }
+    .main section#partners {
+      margin-top: 0px; }
+      .main section#partners .partners__block ul {
+        padding: 35px 0px;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+        .main section#partners .partners__block ul li {
+          padding: 35px 0px; } }
 
 @media only screen and (min-width: 895px) {
   .st-burger-icon-container {
