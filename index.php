@@ -19,17 +19,6 @@ $app->get('/', function ($request, $response, $args) {
     return $this->view->render($response, 'home.twig', $bindVar);
 })->setName('profile');
 
-
-$app->post('/contact', function (Request $request) {
-
-    $indexController = new indexController();
-
-    $req = $request->getParams();
-    $msgReq = $req['nbrMessage'];
-    $corps = $req['corps'];
-    $indexController->ContactTratement($msgReq, $corps);
-});
-
 //groupe routes : admin
 $app->group('/admin/', function () {
     //home admin
@@ -144,10 +133,14 @@ $app->post('/contact', function(Request $request) {
     $contactController->contactTreatment($pdo, $data);
 });
 
-$app->group('/contact/', function() {
+$app->group('/espClient/', function() {
 
-    $this->map(['GET', 'POST'], 'connexion', function($request, $response, $arg) {
+    $this->map(['GET', 'POST'], 'login-page', function($request, $response, $args) {
+        return $this->view->render($response, 'espClient/page/connexion.twig');
+    });
 
+    $this->map(['GET', 'POST'], 'home', function($request, $response, $arg) {
+        return $this->view->render($response, 'espClient/page/home.twig');
     });
 });
 
