@@ -500,7 +500,8 @@ textarea {
       margin-top: 15px;
       color: #0A33E0; }
       .sticky__navigation a.active:before {
-        width: 60px; }
+        width: 60px;
+        border-color: #0A33E0; }
 
 .header {
   width: 100vw;
@@ -547,6 +548,8 @@ textarea {
               height: 2px;
               width: 100%;
               border-top: 1px solid #000; }
+          .header nav ul li a:hover {
+            color: #0A33E0; }
 
 .nav ul {
   list-style: none; }
@@ -673,6 +676,7 @@ textarea {
         color: #000000; }
       .main section#keynumber .block-numbers {
         background-color: #000000;
+        z-index: 99999999;
         width: 100%;
         height: 225px;
         margin: 145px auto 145px auto;
@@ -692,7 +696,7 @@ textarea {
               display: block;
               line-height: 60px;
               font-family: "Avenir Next Bold";
-              font-size: 48px;
+              font-size: 28px;
               color: #FFFFFF; }
             .main section#keynumber .block-numbers .numbers .number .number-subtitle {
               display: block;
@@ -758,48 +762,159 @@ textarea {
     .main section#expertise .expertise__block {
       position: relative;
       width: 100%;
-      height: 300px;
+      height: 350px;
       overflow: hidden; }
     .main section#expertise .block {
       width: 100%;
       float: left;
-      height: 300px;
-      background-size: 50%;
-      background-position: 100%;
+      height: 350px;
       display: inline-block;
       background-repeat: no-repeat;
       transition: .6s all ease-in; }
+      .main section#expertise .block .image {
+        background-size: 51%;
+        background-position: 100%;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        z-index: -99999999999; }
+      .main section#expertise .block .link__open--left {
+        font-family: "Montserrat Regular";
+        color: #0A33E0;
+        background: rgba(255, 255, 255, 0.4);
+        border: 1px solid #0A33E0;
+        padding: 10px 60px;
+        position: absolute;
+        top: 45%;
+        right: 12.5%;
+        transition: .3 all ease-in; }
+        .main section#expertise .block .link__open--left:hover {
+          color: #fff;
+          background: #0A33E0; }
+      .main section#expertise .block .link__open--right {
+        font-family: "Montserrat Regular";
+        color: #0A33E0;
+        background: rgba(255, 255, 255, 0.4);
+        border: 1px solid #0A33E0;
+        padding: 10px 60px;
+        position: absolute;
+        top: 45%;
+        left: 12.5%; }
+        .main section#expertise .block .link__open--right:hover {
+          color: #fff;
+          background: #0A33E0; }
       .main section#expertise .block h2 {
         text-align: right;
-        margin: 20px;
-        opacity: 0; }
+        font-size: 20px;
+        color: #fff;
+        font-weight: bold;
+        margin: 20px 60px;
+        opacity: 0;
+        -ms-transform: translate(-200px);
+            transform: translate(-200px);
+        transition: .6s all ease-in; }
+        .main section#expertise .block h2:before {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: -20px;
+          right: 0;
+          height: 10px;
+          width: 60px;
+          border-top: 6px solid #0a33e0; }
       .main section#expertise .block p.description {
         position: absolute;
-        max-width: 400px;
-        margin: 20px;
+        max-width: 300px;
+        margin: 50px 60px;
+        text-align: right;
+        font-size: 16px;
         opacity: 0;
-        right: 0; }
+        color: #fff;
+        right: 0;
+        -ms-transform: translate(-300px);
+            transform: translate(-300px);
+        transition: transform .6s ease-in; }
+      .main section#expertise .block .ask__invoice {
+        padding: 10px 30px;
+        font-size: 14px;
+        border: 1px solid #fff;
+        color: #fff;
+        opacity: 0;
+        position: absolute;
+        bottom: 50px;
+        right: 60px;
+        z-index: 99999; }
+        .main section#expertise .block .ask__invoice:hover {
+          background: #fff;
+          color: #0A33E0; }
       .main section#expertise .block nav {
-        display: none; }
+        display: none;
+        -ms-transform: translate(-300px);
+            transform: translate(-300px);
+        transition: .6s all ease-in; }
+        .main section#expertise .block nav a:first-child {
+          margin-top: 0 !important;
+          margin-bottom: 20px; }
+        .main section#expertise .block nav a {
+          font-family: "Montserrat Regular";
+          font-size: 16px;
+          margin: 20px 0;
+          text-decoration: none;
+          color: #fff; }
+          .main section#expertise .block nav a.active {
+            color: #0A33E0; }
+            .main section#expertise .block nav a.active:before {
+              content: "";
+              display: block;
+              position: absolute;
+              bottom: -10px;
+              right: 0;
+              height: 2px;
+              width: 20px;
+              border-top: 1px solid #000; }
+      .main section#expertise .block.open .image {
+        background-size: 150%;
+        -webkit-filter: blur(5px);
+        -moz-filter: blur(5px);
+        -o-filter: blur(5px);
+        -ms-filter: blur(5px);
+        filter: blur(5px); }
+      .main section#expertise .block.open h2 {
+        -ms-transform: translate(0px);
+            transform: translate(0px); }
+      .main section#expertise .block.open .ask__invoice {
+        opacity: 1; }
       .main section#expertise .block.open nav {
         display: -ms-flexbox;
         display: flex;
+        margin-left: 100px;
         -ms-flex-direction: column;
-            flex-direction: column; }
+            flex-direction: column;
+        -ms-transform: translate(0px);
+            transform: translate(0px); }
         .main section#expertise .block.open nav a {
-          max-width: 100px; }
+          max-width: 150px; }
+      .main section#expertise .block.open p.description {
+        -ms-transform: translate(0px);
+            transform: translate(0px); }
       .main section#expertise .block.open p.description1 {
         opacity: 1;
         display: block; }
       .main section#expertise .block.open a.nb1 {
-        color: red; }
+        color: #0A33E0; }
       .main section#expertise .block.block--left {
         -ms-transform: translate(-50%, 0);
-            transform: translate(-50%, 0);
-        background-position: 100%; }
+            transform: translate(-50%, 0); }
+        .main section#expertise .block.block--left .image {
+          background-position: 100%;
+          background-image: url("../img/gros-oeuvre.jpg"); }
         .main section#expertise .block.block--left.open {
           -ms-transform: translate(0%);
               transform: translate(0%); }
+          .main section#expertise .block.block--left.open .image {
+            background-position: 60% 10%; }
           .main section#expertise .block.block--left.open h2 {
             opacity: 1; }
         .main section#expertise .block.block--left.close {
@@ -807,8 +922,10 @@ textarea {
               transform: translate(-100%); }
       .main section#expertise .block.block--right {
         -ms-transform: translate(50%, -100%);
-            transform: translate(50%, -100%);
-        background-position: 0%; }
+            transform: translate(50%, -100%); }
+        .main section#expertise .block.block--right .image {
+          background-position: 0%;
+          background-image: url("../img/isolation.jpg"); }
         .main section#expertise .block.block--right.open {
           -ms-transform: translate(0%, -100%);
               transform: translate(0%, -100%); }
