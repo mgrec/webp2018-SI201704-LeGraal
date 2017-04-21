@@ -146,4 +146,15 @@ class adminRepository
         $stmt->execute();
         return true;
     }
+
+    public function getIdAction($pdo, $user)
+    {
+        $query = "SELECT `id` FROM `users` WHERE `email` = :email";
+        $stmt = $pdo->prepare($query);
+        $stmt->bindValue(':email', $user);
+        $stmt->execute();
+        $res = $stmt->fetch();
+
+        return $res;
+    }
 }

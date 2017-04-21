@@ -86,7 +86,7 @@ h1 {
 }
 
 .active{
-    color: #fff;
+    color: #fff!important;
     background: #0126E3;
 }
 
@@ -95,12 +95,21 @@ h1 {
     border: 1px solid #1e1e1e;
 }
 
+.list img{
+    width:32px;
+}
+
 .list ul li{
     height: 80px;
     display: flex;
     align-items: center;
     justify-content: space-around;
     border: 1px solid #EEE;
+}
+
+.list ul li p{
+    width:33%;
+    text-align: center;
 }
 
 .list__lieu{
@@ -125,6 +134,10 @@ h1 {
     width:24px;
 }
 
+.hidden{
+    display: none;
+}
+
 @media screen and (max-width: 768px) {
     .container{
         padding: 5vh 0;
@@ -140,6 +153,10 @@ h1 {
     .list ul li{
         height: 150px;
         flex-direction: column;
+    }
+
+    .list ul li p{
+        width:100%;
     }
 }
 
