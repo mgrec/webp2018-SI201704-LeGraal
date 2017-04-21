@@ -1,7 +1,6 @@
 {% include 'admin/block/header.twig' %}
 
 <body>
-
 <div class="content-form">
     <form method="POST" action="">
         <div class="form-group">
@@ -10,11 +9,11 @@
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Nom</label>
-            <input name="lastname" value="{{ admin_infos.name }}" type="email" class="form-control" id="exampleInputEmail1" placeholder="Nom">
+            <input name="name" value="{{ admin_infos.name }}" type="text" class="form-control" id="exampleInputEmail1" placeholder="Nom">
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Prénom</label>
-            <input name="name" type="email" value="{{ admin_infos.lastname }}" class="form-control" id="exampleInputEmail1" placeholder="Prénom">
+            <input name="lastname" type="text" value="{{ admin_infos.lastname }}" class="form-control" id="exampleInputEmail1" placeholder="Prénom">
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
@@ -23,10 +22,20 @@
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Confirmer le password</label>
-            <input name="password" value="{{ admin_infos.password }}" type="password" class="form-control" id="exampleInputPassword1"
+            <input name="password_confirm" value="{{ admin_infos.password }}" type="password" class="form-control" id="exampleInputPassword1"
                    placeholder="Confirmer password">
         </div>
+        {% if code is defined %}
+            {% if code == false %}
+                <p style="color: red">Les mots de passe ne correspondent pas.</p>
+            {% endif %}
+        {% endif %}
         <button type="submit" class="btn btn-default">Enregistrer mes informations</button>
+        {% if code is defined %}
+            {% if code == true %}
+                <h3 style="text-align: center"><span class="label label-success">Le compte administrateur a bien été mis à jour</span></h3>
+            {% endif %}
+        {% endif %}
     </form>
 </div>
 

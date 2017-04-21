@@ -152,5 +152,13 @@ class adminController
         }
         return $data['id'];
     }
+    
+    public function updateAdmin($data, $pdo)
+    {
+        $repo = new adminRepository();
+        $repo->updateAdminAction($pdo, $data);
+        
+        return true;
+    }
 
 }
