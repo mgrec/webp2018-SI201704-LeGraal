@@ -13,6 +13,11 @@
     font-family: "Montserrat Regular";
 }
 
+.linkBack{
+    color: #0126E3;
+    margin-top: 10px;
+}
+
 .containerEspClient h1{
     margin-bottom: 20px;
 }
@@ -30,6 +35,7 @@
 .inputField{
     display: flex;
     flex-direction: column;
+    width: 250px;
 }
 
 .inputField label{
