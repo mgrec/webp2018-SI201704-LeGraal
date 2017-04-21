@@ -551,6 +551,65 @@ textarea {
 .nav ul {
   list-style: none; }
 
+.modal {
+  padding: 25px;
+  width: 500px; }
+  .modal form label, .modal form input {
+    width: 100%;
+    margin-top: 10px;
+    display: block; }
+  .modal form label {
+    font-size: 18px;
+    color: #0A33E0;
+    font-family: "Avenir Next Bold";
+    position: relative;
+    z-index: 1; }
+  .modal form input {
+    outline: none;
+    font-size: 13px;
+    color: #6D6D6D;
+    font-family: "Montserrat Regular";
+    border: 1px solid #6D6D6D; }
+  .modal form .date {
+    display: inline-block;
+    width: 180px;
+    text-align: center;
+    padding-left: 50px;
+    margin-right: 30px; }
+  .modal form .radio {
+    display: inline-block;
+    font-size: 13px;
+    color: #6D6D6D;
+    font-family: "Montserrat Regular";
+    width: 15px; }
+  .modal form .label-radio {
+    display: inline-block;
+    width: 100px;
+    font-size: 13px;
+    color: #6D6D6D;
+    font-family: "Montserrat Regular"; }
+  .modal form #professionnel {
+    margin-right: 30px; }
+  .modal form textarea {
+    width: 100%;
+    font-size: 13px;
+    color: #6D6D6D;
+    font-family: "Montserrat Regular";
+    resize: none; }
+  .modal form .submit {
+    background-color: #0A33E0;
+    display: block;
+    margin: 20px auto 0;
+    width: 200px;
+    height: 50px;
+    padding: 0 30px;
+    font-size: 18px;
+    line-height: 50px;
+    color: #FFFFFF;
+    font-family: "Montserrat Regular";
+    border: none;
+    text-transform: uppercase; }
+
 .main {
   padding: 20px; }
   .main section {
@@ -770,15 +829,32 @@ textarea {
       background-size: 50%;
       background-position: 100%;
       display: inline-block;
-      background-repeat: no-repeat; }
+      background-repeat: no-repeat;
+      transition: .6s all ease-in; }
       .main section#expertise .block h2 {
         text-align: right;
         margin: 20px;
         opacity: 0; }
       .main section#expertise .block p.description {
-        text-align: right;
+        position: absolute;
+        max-width: 400px;
         margin: 20px;
-        opacity: 0; }
+        opacity: 0;
+        right: 0; }
+      .main section#expertise .block nav {
+        display: none; }
+      .main section#expertise .block.open nav {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+        .main section#expertise .block.open nav a {
+          max-width: 100px; }
+      .main section#expertise .block.open p.description1 {
+        opacity: 1;
+        display: block; }
+      .main section#expertise .block.open a.nb1 {
+        color: red; }
       .main section#expertise .block.block--left {
         -ms-transform: translate(-50%, 0);
             transform: translate(-50%, 0);
@@ -788,12 +864,6 @@ textarea {
               transform: translate(0%); }
           .main section#expertise .block.block--left.open h2 {
             opacity: 1; }
-          .main section#expertise .block.block--left.open p.description {
-            opacity: 1;
-            max-width: 400px;
-            position: absolute;
-            display: block;
-            right: 0; }
         .main section#expertise .block.block--left.close {
           -ms-transform: translate(-100%);
               transform: translate(-100%); }
@@ -805,8 +875,6 @@ textarea {
           -ms-transform: translate(0%, -100%);
               transform: translate(0%, -100%); }
           .main section#expertise .block.block--right.open h2 {
-            opacity: 1; }
-          .main section#expertise .block.block--right.open p.description {
             opacity: 1; }
         .main section#expertise .block.block--right.close {
           -ms-transform: translate(100%, -100%);
@@ -1109,6 +1177,7 @@ textarea {
     .main section#expertise .subtitle {
       margin-bottom: 50px; }
     .main section#expertise .expertise__block {
+      display: none !important;
       display: -ms-flexbox;
       display: flex;
       -ms-flex-direction: column;
@@ -1138,6 +1207,8 @@ textarea {
       .main section#expertise .block .click {
         text-transform: uppercase;
         font-family: "Montserrat Regular"; }
+    .main section#expertise .slick-block__content h3 {
+      font-size: 18px; }
     .main section#expertise .expertise__block--black {
       display: none; }
     .main section#works .works__block.flex-reverse {

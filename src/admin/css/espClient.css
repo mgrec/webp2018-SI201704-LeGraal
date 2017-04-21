@@ -95,6 +95,10 @@ h1 {
     border: 1px solid #1e1e1e;
 }
 
+.list img{
+    width:32px;
+}
+
 .list ul li{
     height: 80px;
     display: flex;

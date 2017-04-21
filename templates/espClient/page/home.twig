@@ -15,11 +15,13 @@
     </div>
     <div class="list">
         <ul>
+            {% for plan in plans %}
             <li>
-                <p class="list__lieu">maison</p>
-                <p><b>Livraison</b> : </p>
-                <p>picto</p>
+                <p class="list__lieu">{{ plan.chantier_name }}</p>
+                <p><b>Livraison</b> : 01/05/2018</p>
+                <p><a href="{{ plan.path }}"><img src="/app/assets/img/desktop/oeil.png" alt=""></a></p>
             </li>
+            {% endfor %}
         </ul>
     </div>
 </div>

@@ -1,0 +1,71 @@
+.modal {
+  padding: 25px;
+  width: 500px;
+  form {
+    label,input {
+      width: 100%;
+      margin-top: 10px;
+      display: block;
+    }
+    label {
+      font-size: 18px;
+      color: $blue;
+      font-family: $avenir-next-bold;
+      position: relative;
+      z-index: 1;
+    }
+    input {
+      outline: none;
+      font-size: 13px;
+      color: $grey-light;
+      font-family: $montserrat-regular;
+      border: 1px solid $grey-light;
+    }
+    .date {
+      display: inline-block;
+      width: 180px;
+      text-align: center;
+      padding-left: 50px;
+      margin-right: 30px;
+    }
+    .radio {
+      display: inline-block;
+      font-size: 13px;
+      color: $grey-light;
+      font-family: $montserrat-regular;
+      width: 15px;
+    }
+    .label-radio {
+      display: inline-block;
+      width: 100px;
+      font-size: 13px;
+      color: $grey-light;
+      font-family: $montserrat-regular;
+    }
+    #professionnel {
+      margin-right: 30px;
+    }
+    textarea {
+      width: 100%;
+      font-size: 13px;
+      color: $grey-light;
+      font-family: $montserrat-regular;
+      resize:none
+    }
+    .submit {
+      background-color: $blue;
+      display: block;
+      margin: 20px auto 0;
+      width: 200px;
+      height: 50px;
+      padding: 0 30px;
+      font-size: 18px;
+      line-height: 50px;
+      color: $white;
+      font-family: $montserrat-regular;
+      border: none;
+      text-transform: uppercase;
+
+    }
+  }
+}

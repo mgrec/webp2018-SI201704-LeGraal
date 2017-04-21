@@ -269,6 +269,7 @@
         background-position: 100%;
         display: inline-block;
         background-repeat: no-repeat;
+        transition: .6s all ease-in;
 
         h2 {
           text-align: right;
@@ -277,9 +278,34 @@
         }
 
         p.description {
-          text-align: right;
+          position: absolute;
+          max-width: 400px;
           margin: 20px;
           opacity: 0;
+          right: 0;
+        }
+
+        nav {
+          display: none;
+        }
+
+        &.open {
+          nav {
+            display: flex;
+            flex-direction: column;
+
+            a {
+              max-width: 100px;
+            }
+          }
+          p.description1 {
+            opacity: 1;
+            display: block;
+          }
+
+          a.nb1 {
+            color: red;
+          }
         }
 
         &.block--left {
@@ -291,13 +317,6 @@
 
             h2 {
               opacity: 1;
-            }
-            p.description {
-              opacity: 1;
-                  max-width: 400px;
-                  position: absolute;
-                  display: block;
-                  right: 0;
             }
           }
           &.close {
@@ -312,9 +331,6 @@
             transform: translate(0%,-100%);
 
             h2 {
-              opacity: 1;
-            }
-            p.description {
               opacity: 1;
             }
           }

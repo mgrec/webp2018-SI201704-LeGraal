@@ -46,6 +46,56 @@ $(function () {
 		}
 	})
 
+	$(".link__panel").each(function(index) {
+		var z = $(this).attr("class").split(' ');
+		for(var i=0; i<z.length; i++){
+			$("."+z[1]).mouseover(function(){
+				if (z[1] == 'nb1') {
+					$('.nb1').css("color", "red");
+					$('.description1').css('opacity', '1');
+					$('.nb2').css("color", "#000");
+					$('.description2').css('opacity', '0');
+					$('.nb3').css("color", "#000");
+					$('.description3').css('opacity', '0');
+					$('.nb4').css("color", "#000");
+					$('.description4').css('opacity', '0'); 
+				};
+				if (z[1] == 'nb2') {
+					$('.nb1').css("color", "#000");
+					$('.description1').css('opacity', '0');
+					$('.nb2').css("color", "red");
+					$('.description2').css('opacity', '1');
+					$('.nb3').css("color", "#000");
+					$('.description3').css('opacity', '0');
+					$('.nb4').css("color", "#000");
+					$('.description4').css('opacity', '0'); 
+				};
+				if (z[1] == 'nb3') {
+					$('.nb1').css("color", "#000");
+					$('.description1').css('opacity', '0');
+					$('.nb2').css("color", "#000");
+					$('.description2').css('opacity', '0');
+					$('.nb3').css("color", "red");
+					$('.description3').css('opacity', '1');
+					$('.nb4').css("color", "#000");
+					$('.description4').css('opacity', '0'); 
+				};
+				if (z[1] == 'nb4') {
+					$('.nb1').css("color", "#000");
+					$('.description1').css('opacity', '0');
+					$('.nb2').css("color", "#000");
+					$('.description2').css('opacity', '0');
+					$('.nb3').css("color", "#000");
+					$('.description3').css('opacity', '0');
+					$('.nb4').css("color", "red");
+					$('.description4').css('opacity', '1'); 
+				};
+
+			});
+		}
+
+	})
+
 	$(document).ready(function(){
 		if (window.innerWidth < 894) {
 			$('.slick-block__content').slick({

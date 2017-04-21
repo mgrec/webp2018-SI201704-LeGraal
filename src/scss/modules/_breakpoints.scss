@@ -244,6 +244,7 @@
 				}
 
 				.expertise__block {
+					display: none !important;
 				    display: flex;
 				    flex-direction: column;
 				    justify-content: center;
@@ -276,6 +277,12 @@
 					.click {
 						text-transform: uppercase;
 						font-family: $montserrat-regular;
+					}
+				}
+
+				.slick-block__content {
+					h3 {
+						font-size: 18px;
 					}
 				}
 
