@@ -40,6 +40,8 @@ $app->group('/admin/', function () {
 
         if (isset($_SESSION['user_admin'])){
             $bindVar['user_admin'] = $_SESSION['user_admin'];
+            $admin_name = $adminController->getAdminName($pdo, $bindVar['user_admin']);
+            $bindVar['user_admin_name'] = $admin_name['name'];
         }
 
         $isConnect = $adminController->isAdminConnect();
@@ -134,8 +136,6 @@ $app->group('/admin/', function () {
         $adminController = new adminController();
         $pdo = $this->db;
 
-        $users = $adminController->getAllUsers($pdo);
-        $bindVar['users_list'] = $users;
         $isConnect = $adminController->isAdminConnect();
 
         if (isset($_POST['email'])){
@@ -144,6 +144,9 @@ $app->group('/admin/', function () {
             $bindVar['code'] = $userAdd['code'];
         }
 
+        $users = $adminController->getAllUsers($pdo);
+        $bindVar['users_list'] = $users;
+        
         if ($isConnect == true) {
             $bindVar['connected'] = true;
             return $this->view->render($response, 'admin/page/users.twig', $bindVar);
