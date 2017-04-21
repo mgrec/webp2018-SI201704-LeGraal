@@ -3,13 +3,15 @@
   'use strict';
 
 $(function () {
-	$('.panel-left-open').on('click', function(event){
+	$('.link__open--left').on('click', function(event){
 		event.preventDefault();
+		$('.link__open--left').css("display", "none");
 		$('.block--left').addClass('open');
 		$('.block--right').addClass('close');
 	});
-	$('.panel-right-open').on('click', function(event){
+	$('.link__open--right').on('click', function(event){
 		event.preventDefault();
+		$('.link__open--right').css("display", "none");
 		$('.block--left').addClass('close');
 		$('.block--right').addClass('open');
 	});
@@ -51,43 +53,47 @@ $(function () {
 		for(var i=0; i<z.length; i++){
 			$("."+z[1]).mouseover(function(){
 				if (z[1] == 'nb1') {
-					$('.nb1').css("color", "red");
+					$('.nb1').addClass("active");
+					$('.nb1').css("color", "#0a33e0");
 					$('.description1').css('opacity', '1');
-					$('.nb2').css("color", "#000");
+					$('.nb2').removeClass("active");
 					$('.description2').css('opacity', '0');
-					$('.nb3').css("color", "#000");
+					$('.nb3').removeClass("active");
 					$('.description3').css('opacity', '0');
-					$('.nb4').css("color", "#000");
+					$('.nb4').removeClass("active");
 					$('.description4').css('opacity', '0'); 
 				};
 				if (z[1] == 'nb2') {
-					$('.nb1').css("color", "#000");
+					$('.nb1').removeClass("active");
+					$('.nb1').css("color", "#fff");
 					$('.description1').css('opacity', '0');
-					$('.nb2').css("color", "red");
+					$('.nb2').addClass("active");
 					$('.description2').css('opacity', '1');
-					$('.nb3').css("color", "#000");
+					$('.nb3').removeClass("active");
 					$('.description3').css('opacity', '0');
-					$('.nb4').css("color", "#000");
+					$('.nb4').removeClass("active");
 					$('.description4').css('opacity', '0'); 
 				};
 				if (z[1] == 'nb3') {
-					$('.nb1').css("color", "#000");
+					$('.nb1').removeClass("active");
+					$('.nb1').css("color", "#fff");
 					$('.description1').css('opacity', '0');
-					$('.nb2').css("color", "#000");
+					$('.nb2').removeClass("active");
 					$('.description2').css('opacity', '0');
-					$('.nb3').css("color", "red");
+					$('.nb3').addClass("active");
 					$('.description3').css('opacity', '1');
-					$('.nb4').css("color", "#000");
+					$('.nb4').removeClass("active");
 					$('.description4').css('opacity', '0'); 
 				};
 				if (z[1] == 'nb4') {
-					$('.nb1').css("color", "#000");
+					$('.nb1').removeClass("active");
+					$('.nb1').css("color", "#fff");
 					$('.description1').css('opacity', '0');
-					$('.nb2').css("color", "#000");
+					$('.nb2').removeClass("active");
 					$('.description2').css('opacity', '0');
-					$('.nb3').css("color", "#000");
+					$('.nb3').removeClass("active");
 					$('.description3').css('opacity', '0');
-					$('.nb4').css("color", "red");
+					$('.nb4').addClass("active");
 					$('.description4').css('opacity', '1'); 
 				};
 
