@@ -628,8 +628,7 @@ textarea {
   -ms-flex-align: center;
       align-items: center;
   -ms-flex-pack: center;
-      justify-content: center;
-  display: none; }
+      justify-content: center; }
 
 .contactTitle {
   width: 100%;
@@ -650,6 +649,9 @@ textarea {
   position: absolute;
   top: 10px;
   right: 10px; }
+
+.hiddenModal {
+  display: none; }
 
 .main {
   padding: 20px; }

@@ -108,6 +108,26 @@ $(function () {
 			});
 		}
 
+		$('.contactHeader').click(function(){
+			$('.modalOverlay').removeClass('hiddenModal');
+			$(window).scrollTop(0);
+		});
+		$('.contactFooter').click(function(){
+			$('.modalOverlay').removeClass('hiddenModal');
+			$(window).scrollTop(0);
+		});
+		$('.contactdevis').click(function(){
+			$('.modalOverlay').removeClass('hiddenModal');
+			$(window).scrollTop(0);
+		});
+		$('.crossContact').click(function(){
+			$('.modalOverlay').addClass('hiddenModal');
+		});
+		$('.submitContact').click(function(){
+			$('.modalOverlay').addClass('hiddenModal');
+		});
+
+
 	})
 
 	$(document).ready(function(){
