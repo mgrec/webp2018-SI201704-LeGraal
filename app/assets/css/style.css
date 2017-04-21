@@ -554,6 +554,102 @@ textarea {
 .nav ul {
   list-style: none; }
 
+.modal {
+  padding: 25px;
+  width: 500px;
+  background: white;
+  position: relative; }
+  .modal form label, .modal form input {
+    width: 100%;
+    margin-top: 10px;
+    display: block; }
+  .modal form label {
+    font-size: 18px;
+    color: #0A33E0;
+    font-family: "Avenir Next Bold";
+    position: relative;
+    z-index: 1; }
+  .modal form input {
+    outline: none;
+    font-size: 13px;
+    color: #6D6D6D;
+    font-family: "Montserrat Regular";
+    border: 1px solid #6D6D6D; }
+  .modal form .date {
+    display: inline-block;
+    width: 180px;
+    text-align: center;
+    padding-left: 50px;
+    margin-right: 30px; }
+  .modal form .radio {
+    display: inline-block;
+    font-size: 13px;
+    color: #6D6D6D;
+    font-family: "Montserrat Regular";
+    width: 15px; }
+  .modal form .label-radio {
+    display: inline-block;
+    width: 100px;
+    font-size: 13px;
+    color: #6D6D6D;
+    font-family: "Montserrat Regular"; }
+  .modal form #professionnel {
+    margin-right: 30px; }
+  .modal form textarea {
+    width: 100%;
+    font-size: 13px;
+    color: #6D6D6D;
+    font-family: "Montserrat Regular";
+    resize: none; }
+  .modal form .submit {
+    background-color: #0A33E0;
+    display: block;
+    margin: 20px auto 0;
+    width: 200px;
+    height: 50px;
+    padding: 0 30px;
+    font-size: 18px;
+    line-height: 50px;
+    color: #FFFFFF;
+    font-family: "Montserrat Regular";
+    border: none;
+    text-transform: uppercase; }
+
+.modalOverlay {
+  padding-top: 20px;
+  position: absolute;
+  z-index: 56;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center; }
+
+.contactTitle {
+  width: 100%;
+  text-align: center;
+  color: #0A33E0;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 20px; }
+
+.fieldWidth {
+  width: 45%;
+  display: inline-block; }
+
+.fieldWidth:first-child {
+  margin-right: 5%; }
+
+.crossContact {
+  position: absolute;
+  top: 10px;
+  right: 10px; }
+
 .main {
   padding: 20px; }
   .main section {
@@ -564,7 +660,7 @@ textarea {
     .main section .wrapper {
       padding: 0 140px; }
     .main section#home {
-      background: url("../img/desktop/bg.jpg") no-repeat center center;
+      background: url("../img/desktop/bg-desktop.jpg") no-repeat center center;
       background-size: cover;
       height: calc(100vh - 20px); }
       .main section#home .home__block {
@@ -648,7 +744,10 @@ textarea {
         .main section#whoarewe .whoarewe__content .valors {
           display: block;
           text-align: center;
-          margin-top: 100px; }
+          margin-top: 150px; }
+          .main section#whoarewe .whoarewe__content .valors img {
+            width: 120px;
+            height: 120px; }
           .main section#whoarewe .whoarewe__content .valors .valor {
             display: inline-block; }
             .main section#whoarewe .whoarewe__content .valors .valor:first-of-type {
@@ -1050,6 +1149,26 @@ textarea {
 @media only screen and (max-width: 894px) {
   .sticky__navigation {
     display: none !important; }
+  .footer {
+    height: 250px;
+    -ms-flex-direction: column;
+        flex-direction: column; }
+    .footer .nav {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+      .footer .nav ul {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+            flex-direction: column;
+        text-align: center; }
+        .footer .nav ul li {
+          margin-right: 0px;
+          height: 35px; }
+          .footer .nav ul li:first-of-type {
+            margin-left: 0px; }
   .st-burger-icon-container {
     z-index: 99999999999;
     position: absolute;
@@ -1245,7 +1364,32 @@ textarea {
     .main section#expertise .slick-block__content h3 {
       font-size: 18px; }
     .main section#expertise .expertise__block--black {
-      display: none; } }
+      display: none; }
+    .main section#works .works__block.flex-reverse {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse; }
+    .main section#works .works__block .block-text {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+      text-align: center;
+      height: 185px;
+      padding: 35px 0; }
+      .main section#works .works__block .block-text.left {
+        text-align: center;
+        padding: 35px 0; }
+    .main section#works .works__block .visual {
+      width: 100%; }
+    .main section#partners {
+      margin-top: 0px; }
+      .main section#partners .partners__block ul {
+        padding: 35px 0px;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+        .main section#partners .partners__block ul li {
+          padding: 35px 0px; } }
 
 @media only screen and (min-width: 895px) {
   .st-burger-icon-container {

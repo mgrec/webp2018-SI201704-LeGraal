@@ -11,7 +11,7 @@
     }
 
     &#home {
-      background: url('../img/desktop/bg.jpg') no-repeat center center;
+      background: url('../img/desktop/bg-desktop.jpg') no-repeat center center;
       background-size: cover;
       height: calc(100vh - 20px);
 
@@ -115,7 +115,11 @@
         .valors {
           display: block;
           text-align: center;
-          margin-top: 100px;
+          margin-top: 150px;
+          img {
+            width: 120px;
+            height: 120px;
+          }
           .valor {
             display: inline-block;
             &:first-of-type {

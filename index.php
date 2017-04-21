@@ -103,10 +103,23 @@ $app->group('/admin/', function () {
         $adminController = new adminController();
         $pdo = $this->db;
 
+        $isConnect = $adminController->isAdminConnect();
+
+        if (isset($_POST['email']) && isset($_POST['password'])){
+            $array = $_POST;
+            if ($_POST['password'] == $_POST['password_confirm']){
+                $updateAdmin = $adminController->updateAdmin($array, $pdo);
+                $bindVar['border-color'] = '';
+                $bindVar['code'] = true;
+            }else{
+                $bindVar['code'] = false;
+                $bindVar['border-color'] = 'border-color: red';
+            }
+
+        }
+
         $adminInfos = $adminController->getAdminInformations($pdo);
         $bindVar['admin_infos'] = $adminInfos;
-
-        $isConnect = $adminController->isAdminConnect();
 
         if ($isConnect == true) {
             $bindVar['connected'] = true;
@@ -219,7 +232,16 @@ $app->group('/espClient/', function() {
     $this->map(['GET', 'POST'], 'home', function($request, $response, $arg) {
         session_start();
         $bindVar = [];
+        $pdo = $this->db;
         $espClientController = new espClientController();
+        $adminController = new adminController();
+
+        $id = $adminController->getId($_SESSION['user'], $pdo);
+        $id = intval($id['id']);
+
+        $facture = $adminController->getFacture($id, $pdo);
+        $plan = $adminController->getPlan($id, $pdo);
+
 
         if (isset($_SESSION['user'])){
             $bindVar['user'] = $_SESSION['user'];
@@ -230,6 +252,10 @@ $app->group('/espClient/', function() {
         if ($isConnect == true) {
             $bindVar['connected'] = true;
             $bindVar['user'] = $_SESSION['user'];
+            $bindVar['factures'] = $facture;
+            $bindVar['plans'] = $plan;
+//            var_dump($bindVar['plans']);
+//            die();
             return $this->view->render($response, 'espClient/page/home.twig', $bindVar);
         } else {
             return $response->withRedirect('login-page', 301);

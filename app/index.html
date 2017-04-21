@@ -61,7 +61,7 @@
       </nav>
     </header>
     <div class="main">
-      <section id="home" class="section home scrollspy" style="background-image: url('assets/img/desktop/bg.jpg');">
+      <section id="home" class="section home scrollspy" style="background-image: url('assets/img/desktop/bg-desktop.jpg');">
         <img src="assets/img/logo_uandd.svg" alt="U&D" width="200">
       </section>
       <section id="whoarewe" class="section whoarewe scrollspy">
@@ -74,31 +74,36 @@
             <div class="block-right">
               <span class="lines"></span>
               <p class="description">
-                Lorem ipsum dolor sit amet, <br>
-                consectetur adipiscing elit. Pellentesque <br> pulvinar auctor tincidunt. Lorem ipsum <br>dolor sit amet,
+                PME régionale et entreprise citoyenne,
+                l'entreprise U&D met au service des clients
+                son expérience en contruction Gros-Oeuvre,
+                entreprise générale & isolation.
+
               </p>
             </div>
             <div class="block-title">
               <h3 class="title">
-                Lorem ipsum dolor sit amet
+                Un état d'esprit tourné vers le service au client,
               </h3>
               <p class="subtitle">
-                consectetur adipiscing elit. Pellentesque <br> pulvinar auctor tincidunt.
+                l'accompagnement et la qualité, associé à la rigueur <br>
+                de l'organisation et la sécurité sur les chantiers.
               </p>
               <span class="lines"></span>
             </div>
             <div class="block-title right">
               <h3 class="title">
-                Lorem ipsum dolor sit amet
+                Les valeurs qui nous tiennent <br> à coeur.
               </h3>
               <p class="subtitle">
-                consectetur adipiscing elit. Pellentesque <br> pulvinar auctor tincidunt.
+                Parce que ce qui nous importe c'est la bonne réalisation de vos projets, <br>
+                nos sommes disponible du devis à la construction.
               </p>
               <span class="lines"></span>
             </div>
             <ul class="valors">
               <li class="valor">
-                <img src="" alt="">
+                <img src="assets/img/desktop/004-quality.svg" alt="Medal">
                 <h4 class="valor-title">
                   Qualité
                 </h4>
@@ -107,7 +112,7 @@
                 </p>
               </li>
               <li class="valor">
-                <img src="" alt="">
+                <img src="assets/img/desktop/005-handshake.svg" alt="Handshake">
                 <h4 class="valor-title">
                   Engagement
                 </h4>
@@ -118,7 +123,7 @@
             </ul>
             <ul class="valors">
               <li class="valor">
-                <img src="" alt="">
+                <img src="assets/img/desktop/003-calendar.svg" alt="Calendar">
                 <h4 class="valor-title">
                   Sécurité
                 </h4>
@@ -127,7 +132,7 @@
                 </p>
               </li>
               <li class="valor">
-                <img src="" alt="">
+                <img src="assets/img/desktop/002-skyline.svg" alt="Building">
                 <h4 class="valor-title">
                   Finitions
                 </h4>
@@ -146,7 +151,7 @@
             Chiffres Clés.
           </h2>
           <p class="subtitle">
-            Bla bla bla bla
+           U&D satisfait ses clients depuis 2012.
           </p>
           <div class="block-numbers">
             <ul class="numbers">
@@ -179,7 +184,7 @@
           Savoir faire.
         </h2>
         <p class="subtitle">
-          Bla bla bla bla
+          Toutes nos compétences au service de votre projet.
         </p>
         <div class="expertise__block">
           <div class="block block--left panel-left-open">
@@ -243,7 +248,7 @@
               </p>
             </div>
           </div>
-          <div class="works__block">
+          <div class="works__block flex-reverse">
             <div class="block-text left">
               <h3 class="block-title">
                 Centre Commercial
@@ -313,6 +318,10 @@
             <a href="#contact">Contact.</a>
           </li>
         </ul>
+
+        <a href="" class="linkedin">
+          <img src="" alt="">
+        </a>
       </div>
     </footer>
 
@@ -320,9 +329,74 @@
         <a href="#whoarewe" class="whoarewe">Qui sommes nous ?</a>
         <a href="#keynumber" class="keynumber">Chiffres clés</a>
         <a href="#expertise" class="expertise">Savoir faire</a>
-        <a href="#works" class="works">Réalisations</a>
+        <a href="#worksname="  class="works">Réalisations</a>
         <a href="#partners" class="partners">Partenaires</a>
       </nav>
+
+    <div class="modalOverlay">
+    <div class="modal">
+      <p class="contactTitle">Contact</p>
+      <img src="/app/assets/img/desktop/multiply.png" alt="" class="crossContact">
+      <form method="post" action="/contact">
+
+        <div class="fieldWidth">
+          <label for="lastname">Nom</label>
+          <input type="text" name="lastname" id="lastname" required>
+        </div>
+
+        <div class="fieldWidth">
+          <label for="name">Prenom</label>
+          <input type="text" name="name" id="name" required>
+        </div>
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required>
+
+        <label class="label-radio" for="professionnel">Professionnel</label>
+        <input type="radio" class="radio" name="status" id="professionnel" value="professionnel" checked>
+        <label class="label-radio" for="particulier">Particulier</label>
+        <input type="radio" class="radio" name="status" id="particulier" value="particulier">
+
+        <label for="phone">Telephone</label>
+        <input type="text" name="phone" id="phone" maxlength="10">
+
+        <label for="date">Date</label>
+        <input type="date" name="date" class="date" id="date">
+
+        <select name="date" id="">
+          <option value="">9:00</option>
+          <option value="">9:30</option>
+          <option value="">10:00</option>
+          <option value="">10:30</option>
+          <option value="">11:00</option>
+          <option value="">11:30</option>
+          <option value="">12:00</option>
+          <option value="">12:30</option>
+          <option value="">13:00</option>
+          <option value="">13:30</option>
+          <option value="">14:00</option>
+          <option value="">14:30</option>
+          <option value="">15:00</option>
+          <option value="">15:30</option>
+          <option value="">16:00</option>
+          <option value="">16:30</option>
+          <option value="">17:00</option>
+          <option value="">17:30</option>
+          <option value="">18:00</option>
+          <option value="">18:30</option>
+          <option value="">19:00</option>
+        </select>
+
+
+        <label for="object">Objet</label>
+        <input type="text" name="object" id="object" required>
+
+        <label for="message">Message</label>
+        <textarea name="message" id="message" cols="30" rows="5" required></textarea>
+        <input class="submit" type="submit" value="Valider">
+      </form>
+    </div>
+    </div>
 
     <script src="assets/components/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="assets/slick/slick.min.js"></script>

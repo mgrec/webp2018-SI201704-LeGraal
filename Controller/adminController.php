@@ -111,9 +111,17 @@ class adminController
     public function getPlan($id_user, $pdo){
 
         $repo = new adminRepository();
-        $plan = $repo->getPlanAction($id_user,$pdo);
+        $plan = $repo->getPlanAction($id_user, $pdo);
 
         return $plan;
+    }
+
+    public function getId($user, $pdo)
+    {
+        $repo = new adminRepository();
+        $id = $repo->getIdAction($pdo, $user);
+
+        return $id;
     }
 
     public function addFile($data, $dataImg, $pdo)
@@ -143,6 +151,14 @@ class adminController
             $repo->uploadPlanAction($data, $name, $pdo);
         }
         return $data['id'];
+    }
+    
+    public function updateAdmin($data, $pdo)
+    {
+        $repo = new adminRepository();
+        $repo->updateAdminAction($pdo, $data);
+        
+        return true;
     }
 
 }

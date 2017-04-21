@@ -2,6 +2,28 @@
 .sticky__navigation {
 	display:none !important;	
 }
+
+	.footer{
+		height: 250px;
+		flex-direction: column;
+		.nav{
+			display: flex;
+			flex-direction: column;
+			ul{
+				display: flex;
+				flex-direction: column;
+				text-align: center;
+
+				li{
+					margin-right: 0px;
+					height: 35px;
+					&:first-of-type{
+						margin-left: 0px;
+					}
+				}
+			}
+		}
+	}
 .st-burger-icon-container {
     z-index: 99999999999;
 	position: absolute;
@@ -268,6 +290,41 @@
 					display: none;
 				}
 			}
+			&#works {
+				.works__block {
+					&.flex-reverse{
+						display: flex;
+						flex-direction: column-reverse;
+					}
+					.block-text{
+						display: block;
+						margin: 0 auto;
+						width: 100%;
+						text-align: center;
+						height: 185px;
+						padding: 35px 0;
+						&.left{
+							text-align: center;
+							padding: 35px 0;
+						}
+					}
+					.visual{
+						width: 100%;
+					}
+				}
+			}
+			&#partners {
+				margin-top: 0px;
+				.partners__block{
+					ul{
+						padding: 35px 0px;
+						flex-direction: column;
+						li{
+							padding: 35px 0px;
+						}
+					}
+				}
+			}
 		}
 	}
 }@media only screen and (min-width:895px) {
@@ -288,6 +345,7 @@
 			}
 		}
 	}
+
 }
 @media only screen and (min-width:480px) {
 
