@@ -115,6 +115,13 @@ class adminController
 
         return $plan;
     }
+    
+    public function getAdminName($pdo, $email){
+        $repo = new adminRepository();
+        $name = $repo->getAdminNameAction($pdo, $email);
+
+        return $name;
+    }
 
     public function getId($user, $pdo)
     {

@@ -53,14 +53,15 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
+
             {% for user in users_list %}
+            <tr>
                 <td>{{ user.name }}</td>
                 <td>{{ user.lastname }}</td>
                 <td>{{ user.email }}</td>
                 <td><a href="/admin/user/{{ user.id }}">Détails</a></td>
+            <tr>
             {% endfor %}
-        </tr>
         </tbody>
     </table>
 </div>
