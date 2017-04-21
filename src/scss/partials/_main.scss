@@ -1,5 +1,5 @@
 .main {
-  padding: 20px;
+  padding: 10px;
   section {
     width: 100%;
     height: 100%;
@@ -14,6 +14,104 @@
       background: url('../img/desktop/bg-desktop.jpg') no-repeat center center;
       background-size: cover;
       height: calc(100vh - 20px);
+      display: flex;
+      justify-content: center;
+
+      .hero{
+
+      }
+
+      h1 {
+        font-size: 35px;
+        text-align: left;
+        margin: 10vh 0 30px 0;
+        line-height: 60px;
+        color: #fff;
+        max-width: 640px;
+        font-weight: bold;
+        font-family: $montserrat-regular;
+      }
+
+      p {
+        max-width: 640px;
+        color: #fff;
+        font-size: 16px; 
+      }
+
+      .call__action {
+        float: right;
+        margin: 45px 0;
+        padding: 10px 30px;
+        border: 1px solid #fff;
+        font-size: 16px;
+        color: #fff;
+
+        &:hover {
+          background: #fff;
+          color: $blue;
+        }
+      }
+
+      .arrow {
+        position: absolute;
+        bottom: 30px;
+      }
+
+      @-moz-keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+      -moz-transform: translateY(0);
+      transform: translateY(0);
+      }
+      40% {
+      -moz-transform: translateY(-30px);
+      transform: translateY(-30px);
+      }
+      60% {
+      -moz-transform: translateY(-15px);
+      transform: translateY(-15px);
+      }
+      }
+      @-webkit-keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      }
+      40% {
+      -webkit-transform: translateY(-30px);
+      transform: translateY(-30px);
+      }
+      60% {
+      -webkit-transform: translateY(-15px);
+      transform: translateY(-15px);
+      }
+      }
+      @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+      -moz-transform: translateY(0);
+      -ms-transform: translateY(0);
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      }
+      40% {
+      -moz-transform: translateY(-30px);
+      -ms-transform: translateY(-30px);
+      -webkit-transform: translateY(-30px);
+      transform: translateY(-30px);
+      }
+      60% {
+      -moz-transform: translateY(-15px);
+      -ms-transform: translateY(-15px);
+      -webkit-transform: translateY(-15px);
+      transform: translateY(-15px);
+      }
+      }
+
+
+      .bounce {
+        -moz-animation: bounce 2s infinite;
+        -webkit-animation: bounce 2s infinite;
+        animation: bounce 2s infinite;
+      }
 
       .home__block {
         position: absolute;
