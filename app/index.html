@@ -28,7 +28,6 @@
         <span></span>
       </div>
     </div>
-    <div class="banner"></div>
     <header class="header" role="banner">
       <div class="logo">
         <a href="#home">
@@ -62,7 +61,6 @@
       </nav>
     </header>
     <div class="main">
-<<<<<<< HEAD
       <section id="home" class="section home scrollspy" style="background-image: url('assets/img/desktop/bg-desktop.jpg');">
         <div class="hero">
                   <h1>N° 1 du gros oeuvre et de l'isolation dans le monde</h1>
@@ -71,11 +69,6 @@
         </div>
         <img class="logo" src="assets/img/logo_uandd.svg" alt="U&D" width="200">
         <a class="arrow" href="#whoarewe"><img class="bounce"src="assets/img/arrow.svg" alt="arrow"></a>
-=======
-        <section id="home" class="section home scrollspy" style="background-image: url('assets/img/desktop/bg-desktop.jpg');">
-        <h1>N°1 du gros oeuvre et de l'isolation dans le monde</h1>
-        <img src="assets/img/logo_uandd.svg" alt="U&D" width="200">
->>>>>>> 53af6e89a899aaa496bc39c75375be6654a8bfef
       </section>
       <section id="whoarewe" class="section whoarewe scrollspy">
         <div class="wrapper">
@@ -342,16 +335,20 @@
         <a href="#partners" class="partners">Partenaires</a>
       </nav>
 
-    <div class="modalOverlay">
+      <div class="link__contact"><img src="assets/img/paper-plane.svg"></div>
+
     <div class="modal">
-      <p class="contactTitle">Contact</p>
-      <img src="/app/assets/img/desktop/multiply.png" alt="" class="crossContact">
+      <header>
+        <h1>Nous contacter.</h1>
+        <p>Un projet, un besoin ?</p>
+      </header>
       <form method="post" action="/contact">
 
-        <div class="fieldWidth">
-          <label for="lastname">Nom</label>
-          <input type="text" name="lastname" id="lastname" required>
-        </div>
+        <input id="lastname" type="text" class="input" placeholder="Nom">
+        <input id="surname" type="text" class="input" placeholder="Prénom">
+        <input id="mail" type="mail" class="input" placeholder="Mail">
+        <textarea class="textarea" placeholder="Sujet"></textarea>
+        <input type="checkbox">
 
         <div class="fieldWidth">
           <label for="name">Prenom</label>
@@ -404,7 +401,6 @@
         <textarea name="message" id="message" cols="30" rows="5" required></textarea>
         <input class="submit" type="submit" value="Valider">
       </form>
-    </div>
     </div>
 
     <script src="assets/components/jquery/jquery.min.js"></script>
