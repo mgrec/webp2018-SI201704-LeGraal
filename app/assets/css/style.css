@@ -553,7 +553,9 @@ textarea {
 
 .modal {
   padding: 25px;
-  width: 500px; }
+  width: 500px;
+  background: white;
+  position: relative; }
   .modal form label, .modal form input {
     width: 100%;
     margin-top: 10px;
@@ -609,6 +611,41 @@ textarea {
     font-family: "Montserrat Regular";
     border: none;
     text-transform: uppercase; }
+
+.modalOverlay {
+  padding-top: 20px;
+  position: absolute;
+  z-index: 56;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center; }
+
+.contactTitle {
+  width: 100%;
+  text-align: center;
+  color: #0A33E0;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 20px; }
+
+.fieldWidth {
+  width: 45%;
+  display: inline-block; }
+
+.fieldWidth:first-child {
+  margin-right: 5%; }
+
+.crossContact {
+  position: absolute;
+  top: 10px;
+  right: 10px; }
 
 .main {
   padding: 20px; }
