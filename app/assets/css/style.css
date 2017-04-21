@@ -706,7 +706,7 @@ textarea {
             display: inline-block;
             position: absolute;
             left: 60px;
-            top: 55px;
+            top: 12.5%;
             z-index: 0; }
           .main section#whoarewe .whoarewe__content .block-right .description {
             font-size: 23px;
@@ -962,17 +962,29 @@ textarea {
           margin: 20px 0;
           text-decoration: none;
           color: #fff; }
+          .main section#expertise .block nav a:before {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: -10px;
+            right: 50px;
+            height: 2px;
+            width: 60px;
+            border-top: 6px solid #0A33E0;
+            opacity: 0;
+            -ms-transform: translate(-10px);
+                transform: translate(-10px);
+            transition: .1s all ease-in; }
+          .main section#expertise .block nav a:hover:before {
+            opacity: 1;
+            -ms-transform: translate(0px);
+                transform: translate(0px); }
           .main section#expertise .block nav a.active {
             color: #0A33E0; }
             .main section#expertise .block nav a.active:before {
-              content: "";
-              display: block;
-              position: absolute;
-              bottom: -10px;
-              right: 0;
-              height: 2px;
-              width: 20px;
-              border-top: 1px solid #000; }
+              opacity: 1;
+              -ms-transform: translate(0px);
+                  transform: translate(0px); }
       .main section#expertise .block.open .image {
         background-size: 150%;
         -webkit-filter: blur(5px);
@@ -994,7 +1006,8 @@ textarea {
         -ms-transform: translate(0px);
             transform: translate(0px); }
         .main section#expertise .block.open nav a {
-          max-width: 150px; }
+          max-width: 150px;
+          position: relative; }
       .main section#expertise .block.open p.description {
         -ms-transform: translate(0px);
             transform: translate(0px); }
