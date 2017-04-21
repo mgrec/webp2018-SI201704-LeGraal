@@ -620,7 +620,7 @@ textarea {
     .main section .wrapper {
       padding: 0 140px; }
     .main section#home {
-      background: url("../img/desktop/bg-desktop.jpg") no-repeat center center;
+      background: url("/app/assets/img/desktop/bg-desktop.jpg") no-repeat center center;
       background-size: cover;
       height: calc(100vh - 20px); }
       .main section#home .home__block {
@@ -649,7 +649,7 @@ textarea {
         .main section#whoarewe .whoarewe__content .visual {
           width: 560px;
           height: 560px;
-          background: url("../img/desktop/img-strat-1.png") no-repeat center center;
+          background: url("/app/assets/img/desktop/img-strat-1.png") no-repeat center center;
           background-size: cover; }
         .main section#whoarewe .whoarewe__content .block-right {
           background-color: #1E1E1E;
@@ -662,7 +662,7 @@ textarea {
           .main section#whoarewe .whoarewe__content .block-right .lines {
             width: 260px;
             height: 220px;
-            background: url("../img/desktop/lines-blue.svg") no-repeat center center;
+            background: url("/app/assets/img/desktop/lines-blue.svg") no-repeat center center;
             display: inline-block;
             position: absolute;
             left: 60px;

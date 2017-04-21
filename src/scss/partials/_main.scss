@@ -11,7 +11,7 @@
     }
 
     &#home {
-      background: url('../img/desktop/bg-desktop.jpg') no-repeat center center;
+      background: url('/app/assets/img/desktop/bg-desktop.jpg') no-repeat center center;
       background-size: cover;
       height: calc(100vh - 20px);
 
@@ -47,7 +47,7 @@
         .visual {
           width: 560px;
           height: 560px;
-          background: url('../img/desktop/img-strat-1.png') no-repeat center center;
+          background: url('/app/assets/img/desktop/img-strat-1.png') no-repeat center center;
           background-size: cover;
         }
         .block-right {
@@ -61,7 +61,7 @@
           .lines {
             width: 260px;
             height: 220px;
-            background: url('../img/desktop/lines-blue.svg') no-repeat center center;
+            background: url('/app/assets/img/desktop/lines-blue.svg') no-repeat center center;
             display: inline-block;
             position: absolute;
             left: 60px;
