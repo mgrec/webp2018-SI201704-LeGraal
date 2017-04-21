@@ -31,7 +31,6 @@
         <button type="submit" class="btn btn-default">Enregistrer</button>
     </form>
     {% if code is defined %}
-
         {% if code == false %}
             <p style="color: red">Ce client à déjà été enregistré</p>
         {% else %}
@@ -56,10 +55,10 @@
         <tbody>
         <tr>
             {% for user in users_list %}
-            <td>{{ user.name }}</td>
-            <td>{{ user.lastname }}</td>
-            <td>{{ user.email }}</td>
-            <td><a href="/admin/user/{{ user.id }}">Détails</a></td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.lastname }}</td>
+                <td>{{ user.email }}</td>
+                <td><a href="/admin/user/{{ user.id }}">Détails</a></td>
             {% endfor %}
         </tr>
         </tbody>

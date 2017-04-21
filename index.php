@@ -103,10 +103,23 @@ $app->group('/admin/', function () {
         $adminController = new adminController();
         $pdo = $this->db;
 
+        $isConnect = $adminController->isAdminConnect();
+
+        if (isset($_POST['email']) && isset($_POST['password'])){
+            $array = $_POST;
+            if ($_POST['password'] == $_POST['password_confirm']){
+                $updateAdmin = $adminController->updateAdmin($array, $pdo);
+                $bindVar['border-color'] = '';
+                $bindVar['code'] = true;
+            }else{
+                $bindVar['code'] = false;
+                $bindVar['border-color'] = 'border-color: red';
+            }
+
+        }
+
         $adminInfos = $adminController->getAdminInformations($pdo);
         $bindVar['admin_infos'] = $adminInfos;
-
-        $isConnect = $adminController->isAdminConnect();
 
         if ($isConnect == true) {
             $bindVar['connected'] = true;

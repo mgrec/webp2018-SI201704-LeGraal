@@ -157,4 +157,14 @@ class adminRepository
 
         return $res;
     }
+    
+    public function updateAdminAction($pdo, $array){
+        $query = "UPDATE `administrators` SET `name`=:name,`password`=:password,`lastname`=:lastname,`email`=:email WHERE id = 1";
+        $stmt = $pdo->prepare($query);
+        $stmt->bindValue(':email', $array['email']);
+        $stmt->bindValue(':name', $array['name']);
+        $stmt->bindValue(':password', $array['password']);
+        $stmt->bindValue(':lastname', $array['lastname']);
+        $stmt->execute();
+    }
 }
